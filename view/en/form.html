@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <form>
+        <label for="judul">Judul</label>
+        <input name="judul" type="text">
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const judul = params.get('judul');
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+        })
+        if (judul != null) {
+            document.querySelector('input').setAttribute('value', judul);
+            document.querySelector('input').setAttribute('disabled', '');
+
+        }
+    </script>
+</body>
+
+</html>
