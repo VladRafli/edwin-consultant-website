@@ -119,3 +119,86 @@ main {
 .scroll-arrow p:last-child {
     margin-top: 2em;
 }
+
+/* Footer Section -- (Adi) */
+footer {
+    background-color: #1C1C1C;
+}
+
+.footer-section {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem 0;
+}
+
+.footer-links {
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 300px;
+}
+
+.footer-links h3 {
+    color: rgb(255, 255, 255, 0.5);
+    font-size: 1em;
+}
+
+.footer-links ul {
+    padding: .5em 0;
+    list-style: none;
+}
+
+.footer-links ul li a {
+    color: var(--tertiary-color-light);
+    text-decoration: none;
+    font-size: .8em;
+    padding: 5px 0;
+    transition: .3s;
+}
+
+.footer-links ul li a:hover {
+    color: rgb(255, 255, 255, 0.5);
+}
+
+footer hr {
+    border: 0;
+    border-top: 1px solid rgb(255, 255, 255, 0.3);
+}
+
+.footer-extention {
+    width: 90%;
+    margin: auto;
+    padding: 1rem 0;
+}
+
+.footer-language span {
+    color: rgb(255, 255, 255, 0.5);
+    padding-right: .5rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.footer-language span:hover {
+    color: var(--tertiary-color-light);
+}
+
+.footer-language span.footer-active {
+    color: var(--tertiary-color-light);
+}
+
+.footer-cr {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2rem;
+}
+
+.footer-cr .copyright {
+    color: rgb(255, 255, 255, 0.5);
+    font-size: .8em;
+}
+
+.footer-logo {
+    color: #fff;
+}
+
