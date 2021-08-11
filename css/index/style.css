@@ -97,10 +97,12 @@ main {
     border: var(--secondary-color) 2px solid;
     text-decoration: none;
     text-transform: uppercase;
+    transition: .5s;
 }
 
 .hero-buttons a:first-child:hover {
     background-color: var(--primary-color);
+    color: var(--tertiary-color-light);
 }
 
 .scroll-arrow {
