@@ -41,7 +41,6 @@ p, a {
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    color: white;
     font-weight: 1000;
 }
 
@@ -71,64 +70,4 @@ p, a {
     font: inherit;
     text-transform: uppercase;
     cursor: pointer;
-}
-
-.landing {
-    height: 75vh;
-    width: 100vw;
-    padding: 20vh 8rem 2.5rem 8rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    background-color: var(--hero-filter-color);
-    color: white;
-}
-
-.hero h1 {
-    margin-bottom: .5em;
-    font-size: 3.25em;
-}
-
-.hero p {
-    font-size: 1.2em;
-    margin-bottom: 2.5em;
-}
-
-.hero-buttons a {
-    padding: .5em 1.5em;
-    color: inherit;
-    font-weight: bold;
-}
-
-.hero-buttons a:first-child {
-    margin-right: 1em;
-    padding: 1em;
-    border-radius: .25em;
-    background-color: var(--primary-color);
-    text-decoration: none;
-    text-transform: uppercase;
-}
-
-.hero-buttons a:last-child {
-    text-transform: uppercase;
-}
-
-.hero-buttons a:last-child svg {
-    font-size: .8em;
-    transform: rotate(45deg);
-}
-
-.scroll-arrow {
-    display: flex;
-    flex-flow: column;
-    align-items: flex-end;
-    justify-content: center;
-}
-
-.scroll-arrow p {
-    margin-right: -2.5em;
-    transform: rotate(-90deg);
-}
-
-.scroll-arrow svg {
-    margin-top: 3.5em;
 }
