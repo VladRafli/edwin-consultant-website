@@ -120,6 +120,61 @@ main {
     margin-top: 2em;
 }
 
+/* Contact Us Section -- (Adi) */
+.contact-section {
+    display: grid;
+    grid-template-columns: 3fr 5fr;
+}
+
+.contact-text {
+    margin-top: 2rem;
+    margin-right: 2rem;
+}
+
+.contact-text h2 {
+    color: var(--secondary-color);
+    font-size: 2em;
+    padding-bottom: 1rem;
+}
+
+.contact-text h3 {
+    color: var(--primary-color);
+    padding: 1rem 0;
+    font-size: 1em;
+    letter-spacing: 1px;
+}
+
+.contact-text p {
+    margin-right: 2rem;
+    line-height: 2;
+    color: var(--tertiary-color-dark);
+}
+
+.contact-text ul {
+    padding-left: 2rem;
+}
+
+.contact-text ul li {
+    line-height: 2;
+}
+
+.contact-text a {
+    display: block;
+    margin-top: 2rem;
+    color: var(--secondary-color);
+    font-size: 1.25em;
+    transition: .3s;
+}
+
+.contact-text a:hover {
+    color: var(--primary-color);
+}
+
+.contact-maps {
+    margin-top: 2rem;
+    min-height: 300px;
+}
+
 /* Footer Section -- (Adi) */
 footer {
     background-color: #1C1C1C;
@@ -202,3 +257,14 @@ footer hr {
     color: #fff;
 }
 
+@media(max-width: 992px) {
+    .contact-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(min-width: 992px) {
+    .contact-section {
+        grid-template-columns: 3fr 5fr;
+    }
+}
