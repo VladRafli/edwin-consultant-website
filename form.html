@@ -3,7 +3,7 @@
 
 <head>
     <!-- Primary Meta Tags -->
-    <title>Document</title>
+    <title>Service Name</title>
     <meta name="title" content="Title Here!">
     <meta name="description" content="Description Here!">
     <!-- Open Graph / Facebook -->
@@ -25,8 +25,85 @@
 </head>
 
 <body>
-
+    <!-- Header / Navigation -->
+    <header class="navbar">
+        <h1 class="logo">
+            <a href="#">Edwin Consultants</a>
+        </h1>
+        <nav class="navigation">
+            <ul class="nav-list">
+                <li class="nav-link">
+                    <a href="#">About</a>
+                </li>
+                <li class="nav-link">
+                    <a href="#">Services</a>
+                </li>
+                <li class="nav-link">
+                    <a href="#">Career</a>
+                </li>
+                <li class="nav-link">
+                    <a href="#">Contact Us</a>
+                </li>
+                <li class="nav-link">
+                    <select name="lang" id="lang-select">
+                        <option value="en" selected>en</option>
+                        <option value="id">id</option>
+                    </select>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- End of Header -->
+    <!-- Form Detail -->
+    <main>
+        <section class="about">
+            <h1 class="about-header">
+                About <br>
+                <span class="service-name">Service Name</span>
+            </h1>
+            <p class="about-desc">
+                Edwin Consultants has been helping businesses all across Indonesia to grow for more than 30 years with
+                our all-encompassing management, accounting and taxation services. We were established on 1990 and since
+                then has been growing rapidly. We served over 200 clients ranging from individuals to SMEs to businesses
+                in manufacturing, trading, and services sector
+            </p>
+        </section>
+        <form>
+            <input type="text" name="name" id="name" placeholder="Name (Required)" required>
+            <input type="tel" name="phone" id="phone" placeholder="Phone (Required)" required>
+            <input type="text" name="company" id="company" placeholder="Company (Required)" required>
+            <input type="text" name="position" id="position" placeholder="Position (Required)" required>
+            <input type="email" name="email" id="email" placeholder="Email (Required)" required>
+            <input type="text" name="subject" id="subject" placeholder="Subject" required>
+            <textarea name="message" id="message" placeholder="Your Message or Questions"></textarea>
+            <button type="submit" id="button">Call to action</button>
+        </form>
+    </main>
+    <!-- End of Form Detail -->
     <!-- <script src="script.js"></script> -->
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const pid = params.get('pid');
+        console.log(pid);
+        // Check GET Param
+        if (pid == null || pid === '') {
+            console.log('No param or empty param (safe)');
+        } else if (pid === 'test') {
+            document.querySelector('#subject').setAttribute('value', 'Testing Subject');
+            document.querySelector('#subject').setAttribute('disabled', '');
+        } else {
+            document.querySelector('body').style = 'padding: 1em; font-size: 1.25em'
+            document.querySelector('body').innerHTML = `
+                <h1>Not Found</h1>
+                <pre>Something wrong with your request.</pre>
+                <p>Should be implemenented in Back End</p>
+            `;
+        }
+        // Disable reload on submit
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+        });
+    </script>
 </body>
 
 </html>

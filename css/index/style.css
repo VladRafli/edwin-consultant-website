@@ -1,19 +1,21 @@
 /******************************************************
  * ! Variables:
  * * --primary-color: rgba(45, 156, 219, 1);
- * * --secondary-color: rgba(1, 41, 70, 1);
- * * --text-color: rgba(53, 64, 82, 0.7);
+ * * --secondary-color: rgba(0, 66, 114, 0.9);
  * * --tertiary-color-dark: rgba(61, 61, 61, 1);
  * * --tertiary-color-light: rgba(255, 255, 255, 1);
+ * ! Property Values:
+ * * Paragraph and Link Font Size -> font-size: 1.2em
+ * * Container -> padding: 0 8rem;
  ******************************************************/
 
 /* Style Variables */
 
-@import './root.css';
+@import '../root.css';
 
 /* Fonts */
 
-@import './fonts.css';
+@import '../fonts.css';
 
 /* Main Style */
 
@@ -24,18 +26,23 @@
 }
 
 body {
-    font-family: 'Inter';
+    font-family: 'Work Sans';
+    scroll-behavior: smooth;
 }
 
-p {
-    color: var(--text-color);
+p, a {
+    font-size: 1.2em;
 }
 
 .navbar {
+    height: 10vh;
+    width: 100%;
     padding: 2.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    color: white;
     font-weight: 1000;
 }
 
@@ -61,19 +68,22 @@ p {
 }
 
 #lang-select {
+    height: 100%;
+    background: none;
+    color: inherit;
     border: none;
     font: inherit;
     text-transform: uppercase;
     cursor: pointer;
 }
 
-main {
-    padding: 5rem 5rem;
-}
-
 .landing {
+    height: 75vh;
+    padding: calc(15vh + 2.5rem) 8rem 5rem 8rem;
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    background-color: var(--secondary-color);
+    color: white;
 }
 
 .hero h1 {
@@ -93,14 +103,17 @@ main {
 
 .hero-buttons a:first-child {
     margin-right: 1em;
-    background-color: var(--button-color);
-    border: var(--secondary-color) 2px solid;
+    background-color: var(--primary-color);
     text-decoration: none;
     text-transform: uppercase;
 }
 
 .hero-buttons a:first-child:hover {
     background-color: var(--primary-color);
+}
+
+.hero-buttons a:last-child::after {
+    content: ' \2197';
 }
 
 .scroll-arrow {
@@ -110,10 +123,6 @@ main {
     justify-content: center;
 }
 
-.scroll-arrow p:nth-child(1) {
+.scroll-arrow p:first-child {
     transform: rotate(-90deg);
-}
-
-.scroll-arrow p:last-child {
-    margin-top: 2em;
 }
