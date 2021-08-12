@@ -1,0 +1,9 @@
+:root {
+    --primary-color: rgba(45, 156, 219, 1);
+    --secondary-color: rgba(1, 41, 70, 1);
+    --hero-filter-color: rgba(0, 66, 114, 0.9);
+    --button-color: rgba(196, 196, 196, 1);
+    --text-color: rgba(53, 64, 82, 0.7);
+    --tertiary-color-dark: rgba(61, 61, 61, 1);
+    --tertiary-color-light: rgba(255, 255, 255, 1);
+}
