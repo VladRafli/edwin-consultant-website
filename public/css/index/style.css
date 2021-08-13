@@ -1,12 +1,12 @@
 /******************************************************
  * ! Variables:
- * * --primary-color: rgba(45, 156, 219, 1); (Sea like Blue)
- * * --secondary-color: rgba(1, 41, 70, 1); (Dark Blue)
- * * --hero-filter-color: rgba(0, 66, 114, 0.9); (Deep Sea Blue)
- * * --button-color: rgba(196, 196, 196, 1); (Light Grey)
- * * --text-color: rgba(53, 64, 82, 0.7); (Blueish Dark grey)
- * * --tertiary-color-dark: rgba(61, 61, 61, 1); (Dark Grey)
- * * --tertiary-color-light: rgba(255, 255, 255, 1); (Greyish White)
+ * * --primary-color: rgba(45, 156, 219, 1);
+ * * --secondary-color: rgba(0, 66, 114, 0.9);
+ * * --tertiary-color-dark: rgba(61, 61, 61, 1);
+ * * --tertiary-color-light: rgba(255, 255, 255, 1);
+ * ! Property Values:
+ * * Paragraph and Link Font Size -> font-size: 1.2em
+ * * Container -> padding: 0 8rem;
  ******************************************************/
 
 /* Style Variables */
@@ -27,6 +27,7 @@
 
 body {
     font-family: 'Work Sans';
+    scroll-behavior: smooth;
 }
 
 p, a {
@@ -35,7 +36,7 @@ p, a {
 
 .navbar {
     height: 10vh;
-    width: 100vw;
+    width: 100%;
     padding: 2.5rem;
     display: flex;
     justify-content: space-between;
@@ -67,6 +68,9 @@ p, a {
 }
 
 #lang-select {
+    height: 100%;
+    background: none;
+    color: inherit;
     border: none;
     font: inherit;
     text-transform: uppercase;
@@ -75,21 +79,19 @@ p, a {
 
 .landing {
     height: 75vh;
-    width: 100vw;
-    padding: 20vh 8rem 2.5rem 8rem;
+    padding: calc(15vh + 2.5rem) 8rem 5rem 8rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background-color: var(--hero-filter-color);
+    background-color: var(--secondary-color);
     color: white;
 }
 
 .hero h1 {
-    margin-bottom: .5em;
-    font-size: 3.25em;
+    margin-bottom: 1em;
+    font-size: 2.5em;
 }
 
 .hero p {
-    font-size: 1.2em;
     margin-bottom: 2.5em;
 }
 
@@ -101,20 +103,17 @@ p, a {
 
 .hero-buttons a:first-child {
     margin-right: 1em;
-    padding: 1em;
-    border-radius: .25em;
     background-color: var(--primary-color);
     text-decoration: none;
     text-transform: uppercase;
 }
 
-.hero-buttons a:last-child {
-    text-transform: uppercase;
+.hero-buttons a:first-child:hover {
+    background-color: var(--primary-color);
 }
 
-.hero-buttons a:last-child svg {
-    font-size: .8em;
-    transform: rotate(45deg);
+.hero-buttons a:last-child::after {
+    content: ' \2197';
 }
 
 .scroll-arrow {
@@ -124,11 +123,6 @@ p, a {
     justify-content: center;
 }
 
-.scroll-arrow p {
-    margin-right: -2.5em;
+.scroll-arrow p:first-child {
     transform: rotate(-90deg);
-}
-
-.scroll-arrow svg {
-    margin-top: 3.5em;
 }

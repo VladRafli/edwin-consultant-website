@@ -1,0 +1,130 @@
+/******************************************************
+ * ! Variables:
+ * * --primary-color: rgba(45, 156, 219, 1);
+ * * --secondary-color: rgba(0, 66, 114, 0.9);
+ * * --tertiary-color-dark: rgba(61, 61, 61, 1);
+ * * --tertiary-color-light: rgba(255, 255, 255, 1);
+ * ! Property Values:
+ * * Paragraph and Link Font Size -> font-size: 1.2em
+ * * Container -> padding: 0 8rem;
+ ******************************************************/
+
+/* Style Variables */
+
+@import '../root.css';
+
+/* Fonts */
+
+@import '../fonts.css';
+
+/* Main Style */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Work Sans';
+}
+
+p, a {
+    font-size: 1.2em;
+}
+
+.navbar {
+    height: 10vh;
+    width: 100vw;
+    padding: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    font-weight: 1000;
+}
+
+.logo a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.navigation {
+    width: 40%;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    font-size: 1.25em;
+}
+
+.nav-link a {
+    color: inherit;
+    text-decoration: none;
+}
+
+#lang-select {
+    border: none;
+    font: inherit;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+main {
+    padding: calc(15vh + 2.5rem) 8rem 3rem 8rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 5em;
+}
+
+.service-name {
+    color: var(--primary-color);
+}
+
+form {
+    padding: 1em;
+    display: grid;
+    grid-template-rows: 3em 3em 3em 3em 10em 2em;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "name phone"
+    "company position"
+    "email email"
+    "subject subject"
+    "message message"
+    "button button";
+    gap: 1.5em;
+    border-right: .2em solid rgba(0, 0, 0, 0.04);
+    border-bottom: .3em solid rgba(0, 0, 0, 0.04);
+    border-left: .2em solid rgba(0, 0, 0, 0.04);
+    box-shadow: .3em .75em rgba(0, 0, 0, 0.07);
+}
+
+form > input, textarea {
+    height: 100%;
+    padding: 1em;
+    font: inherit;
+    border: 2px solid grey;
+}
+
+form > textarea {
+    resize: none;
+}
+
+form > #email {
+    grid-area: email;
+}
+
+form > #subject {
+    grid-area: subject;
+}
+
+form > #message {
+    grid-area: message;
+}
+
+form > #button {
+    grid-area: button;
+}
