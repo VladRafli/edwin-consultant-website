@@ -252,6 +252,7 @@ p, a {
 
 .contact-text ul li {
     line-height: 2;
+    color: rgba(0, 0, 0, 0.6);
 }
 
 .contact-text a {
@@ -371,5 +372,9 @@ footer hr {
 
     .career-detail {
         grid-template-columns: 1fr;
+    }
+
+    .career-text {
+        width: 100%;
     }
 }
