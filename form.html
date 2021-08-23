@@ -22,11 +22,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/form/style.css">
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js" integrity="sha512-YSdqvJoZr83hj76AIVdOcvLWYMWzy6sJyIMic2aQz5kh2bPTd9dzY3NtdeEAzPp/PhgZqr4aJObB3ym/vsItMg==" crossorigin="anonymous"></script>
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Global Scripts (Load after document fully loaded) -->
+    <script defer src="./js/script.js"></script>
 </head>
 
 <body>
     <!-- Header / Navigation -->
     <header class="navbar hide-navbar navbar-contrast">
+        <!-- Close Menu Button (For Mobile) -->
+        <div class="close-menu-button">
+            <i class="fas fa-times"></i>
+        </div>
         <h1 class="logo">
             <a href="#">
                 <img src="" alt="Logo">
@@ -57,7 +67,14 @@
     </header>
     <!-- End of Header -->
     <!-- Form Detail -->
-    <main>
+    <main class="main">
+        <!-- Menu Button with Logo (For Mobile) -->
+        <div class="menu-button">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="logo-mobile">
+            <img src="" alt="Logo">
+        </div>
         <section class="about">
             <h1 class="about-header">
                 About <br>
@@ -70,7 +87,7 @@
                 in manufacturing, trading, and services sector
             </p>
         </section>
-        <form>
+        <form class="form">
             <input type="text" name="name" id="name" placeholder="Name (Required)" required>
             <input type="tel" name="phone" id="phone" placeholder="Phone (Required)" required>
             <input type="text" name="company" id="company" placeholder="Company (Required)" required>
@@ -134,30 +151,8 @@
             </div>
         </section>
     </footer>
-    <!-- <script src="script.js"></script> -->
-    <script>
-        const params = new URLSearchParams(window.location.search);
-        const pid = params.get('pid');
-        console.log(pid);
-        // Check GET Param
-        if (pid == null || pid === '') {
-            console.log('No param or empty param (safe)');
-        } else if (pid === 'test') {
-            document.querySelector('#subject').setAttribute('value', 'Testing Subject');
-            document.querySelector('#subject').setAttribute('disabled', '');
-        } else {
-            document.querySelector('body').style = 'padding: 1em; font-size: 1.25em'
-            document.querySelector('body').innerHTML = `
-                <h1>Not Found</h1>
-                <pre>Something wrong with your request.</pre>
-                <p>Should be implemenented in Back End</p>
-            `;
-        }
-        // Disable reload on submit
-        document.querySelector('form').addEventListener('submit', (e) => {
-            e.preventDefault();
-        });
-    </script>
+    <!-- Form Page Behaviour -->
+    <script src="./js/form.js"></script>
 </body>
 
 </html>

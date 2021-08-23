@@ -42,10 +42,6 @@
 
 /* Landing -- (Rafli) */
 
-.logo-mobile {
-    display: none;
-}
-
 .landing {
     padding: calc(15vh + 2.5rem) 8rem 8rem 8rem;
     background-color: var(--secondary-color);
@@ -145,17 +141,6 @@
 }
 
 @media screen and ( max-width: 576px ) {
-    .logo-mobile {
-        height: fit-content;
-        width: fit-content;
-        margin-right: 1em;
-        margin-top: 1em;
-        padding: .5em;
-        display: block;
-        position: fixed;
-        top: 0;
-        right: 0;
-    }
 
     .landing {
         padding: calc(15vh + 2.5rem) 2.5rem 8rem 2.5rem;
