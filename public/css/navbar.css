@@ -2,6 +2,10 @@
     display: none;
 }
 
+.logo-mobile {
+    display: none;
+}
+
 .close-menu-button {
     display: none;
 }
@@ -79,9 +83,27 @@
         width: fit-content;
         padding: .5em;
         position: fixed;
+        top: 0;
+        left: 0;
         margin-left: 1em;
         margin-top: 1em;
         color: white;
+    }
+
+    .menu-button-contrast {
+        color: black;
+    }
+
+    .logo-mobile {
+        height: fit-content;
+        width: fit-content;
+        margin-right: 1em;
+        margin-top: 1em;
+        padding: .5em;
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
     }
 
     .menu-button > svg {

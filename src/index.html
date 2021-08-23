@@ -21,13 +21,37 @@
     <!-- Charset and Viewport -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/index/style.css">
+    <link rel="stylesheet" href="/css/index/style.css">
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Font Awesome -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js"
         integrity="sha512-YSdqvJoZr83hj76AIVdOcvLWYMWzy6sJyIMic2aQz5kh2bPTd9dzY3NtdeEAzPp/PhgZqr4aJObB3ym/vsItMg=="
         crossorigin="anonymous"></script>
+    <!-- Global Scripts (Load after document fully loaded) -->
+    <script defer src="/js/script.js"></script>
+    <!-- Navbar Behaviour (Load after document fully loaded) -->
+    <script defer>
+        // Sorry, I'm bad at naming variables
+        const elPos = 435;
+        const sectEnd = 800;
+        $(window).on('scroll', () => {
+            if (window.innerWidth > 426) {
+                if (window.pageYOffset >= elPos) {
+                    $('.navbar').addClass('navbar-contrast');
+                    $('.menu-button').addClass('menu-button-contrast');
+                } else if (window.pageYOffset < elPos) {
+                    $('.navbar').removeClass('navbar-contrast');
+                    $('.menu-button').removeClass('menu-button-contrast');
+                }
+            }
+            if (window.pageYOffset >= sectEnd) {
+                $('.menu-button').addClass('menu-button-contrast');
+            } else if (window.pageYOffset < sectEnd) {
+                $('.menu-button').removeClass('menu-button-contrast');
+            }
+        });
+    </script>
 </head>
 
 <body>
@@ -51,10 +75,10 @@
                     <a href="#">Services</a>
                 </li>
                 <li class="nav-link">
-                    <a href="#">Career</a>
+                    <a href="#career">Career</a>
                 </li>
                 <li class="nav-link">
-                    <a href="#">Contact Us</a>
+                    <a href="#contact">Contact Us</a>
                 </li>
                 <li class="nav-link">
                     <select name="lang" id="lang-select">
@@ -82,7 +106,7 @@
                 <p>Edwin Consultants has been helping businesses all across Indonesia to grow for more than 30 years
                     with our all-encompassing management, accounting and taxation services.</p>
                 <section class="hero-buttons">
-                    <a href="#" id="form">Consultation for free</a>
+                    <a href="/en/contact" id="form">Consultation for free</a>
                     <a href="#" id="whatsapp">Chat with us</a>
                 </section>
             </section>
@@ -93,7 +117,7 @@
         </section>
         <!-- End of Landing -->
         <!-- Career -->
-        <section class="career-section">
+        <section class="career-section" id="career">
             <div class="career-img">
                 <!-- <img src="assets/img/career.png" alt="Career Tax Accountants Associate"> -->
             </div>
@@ -130,7 +154,7 @@
         </section>
         <!-- End of Career -->
         <!-- Contact Us -->
-        <section class="contact-section">
+        <section class="contact-section" id="contact">
             <div class="contact-text">
                 <h2>CONTACT US</h2>
                 <h3>EDWIN CONSULTANTS OFFICE</h3>
@@ -146,6 +170,7 @@
                 <a href="#">CHAT WITH US (icon)</a><!-- Need Icon-->
             </div>
             <div class="contact-maps">
+                <!-- Uncomment this on deploy (I dont like google tracking when develop this locally) - Rafli -->
                 <!-- <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d365.5631031859842!2d112.78022895714393!3d-7.283121134459659!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fa38ce076b7b%3A0x5b86aa047c8511f8!2s12A%2C%20Jl.%20Sukarno%20Hatta%20No.14C%2C%20Klampis%20Ngasem%2C%20Sukolilo%2C%20Surabaya%20City%2C%20East%20Java%2060116!5e0!3m2!1sid!2sid!4v1628739258936!5m2!1sid!2sid"
                     width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
@@ -207,26 +232,6 @@
         </section>
     </footer>
     <!-- End of Footer -->
-    <script>
-        const elPos = 500;
-        $(window).scroll(() => {
-            if (window.innerWidth > 426) {
-                if (window.pageYOffset >= elPos) {
-                    $('.navbar').addClass('navbar-contrast');
-                } else if (window.pageYOffset < elPos) {
-                    $('.navbar').removeClass('navbar-contrast')
-                }
-            }
-        });
-        $('.menu-button').click(() => {
-            $('.navbar').removeClass('hide-navbar');
-            $('.menu-button').attr('style', 'display: none;');
-        });
-        $('.close-menu-button').click(() => {
-            $('.navbar').addClass('hide-navbar');
-            $('.menu-button').removeAttr('style');
-        });
-    </script>
 </body>
 
 </html>
