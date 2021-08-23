@@ -36,6 +36,10 @@
 
 @import '../navbar.css';
 
+/* Footer -- (Adi) */
+
+@import '../footer.css';
+
 /* Main Style */
 
 main {
@@ -43,6 +47,10 @@ main {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 5em;
+}
+
+.about-header {
+    margin-bottom: 1em;
 }
 
 .service-name {
