@@ -18,11 +18,15 @@ app.use(cors());
  */
 app.use(express.static(path.join(__dirname, '/public')));
 /**
- * Because we don't have something to detect user nationality
- * So we redirect all user to english page
+ * Default language is English
+ * But we save user language preference in their localStorage 
+ * And no caching because we want to redirect user to somewhere else
  */
 app.get('/', (req, res) => {
-    res.redirect('/en');
+    res.header('Cache-control', 'max-age=0, no-cache, no-store, must-revalidate');
+    res.header('Expires', 'Thu, 01 Jan 1970 00:00:00 GMT');
+    res.header('Pramga', 'no-cache');
+    res.sendFile(path.join(__dirname, '/src/redirect.html'));
 });
 /**
  * Route for English Pages
