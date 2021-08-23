@@ -4,9 +4,20 @@
  * * --secondary-color: rgba(0, 66, 114, 0.9);
  * * --tertiary-color-dark: rgba(61, 61, 61, 1);
  * * --tertiary-color-light: rgba(255, 255, 255, 1);
+ * ! Screen Width for Media Query
+ * * Device Width (Reference: https://getbootstrap.com/docs/5.0/layout/breakpoints/
+ * * X-Small < 576px
+ * * Small >= 576px
+ * * Medium >= 768px
+ * * Large >= 992px
+ * * Extra Large >= 1200px
+ * * Extra Extra Large >= 1400px
+ * ! Text Weight
+ * * --text-bold: 1000;
  * ! Property Values:
  * * Paragraph and Link Font Size -> font-size: 1.2em
  * * Container -> padding: 0 8rem;
+ * * -> Top and Bottom = 0 & Left and Right = 8rem
  ******************************************************/
 
 /* Style Variables */
@@ -17,73 +28,28 @@
 
 @import '../fonts.css';
 
-/* Main Style */
+/* Reboot Style -- (Rafli) */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@import '../reboot.css';
 
-body {
-    font-family: 'Work Sans';
-    scroll-behavior: smooth;
-}
+/* Navbar -- (Rafli) */
 
-p, a {
-    font-size: 1.2em;
-}
+@import '../navbar.css';
 
-.navbar {
-    height: 10vh;
-    width: 100%;
-    padding: 2.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    color: white;
-    font-weight: 1000;
-}
+/* Landing -- (Rafli) */
 
-.logo a {
-    color: var(--primary-color);
-    text-decoration: none;
-}
-
-.navigation {
-    width: 40%;
-}
-
-.nav-list {
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-    font-size: 1.25em;
-}
-
-.nav-link a {
-    color: inherit;
-    text-decoration: none;
-}
-
-#lang-select {
-    height: 100%;
-    background: none;
-    color: inherit;
-    border: none;
-    font: inherit;
-    text-transform: uppercase;
-    cursor: pointer;
+.logo-mobile {
+    display: none;
 }
 
 .landing {
-    height: 75vh;
-    padding: calc(15vh + 2.5rem) 8rem 5rem 8rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    padding: calc(15vh + 2.5rem) 8rem 8rem 8rem;
     background-color: var(--secondary-color);
     color: white;
+}
+
+.hero {
+    width: 50%;
 }
 
 .hero h1 {
@@ -101,8 +67,17 @@ p, a {
     font-weight: bold;
 }
 
+.hero-buttons {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 100%;
+    gap: 1em;
+}
+
 .hero-buttons a:first-child {
-    margin-right: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--primary-color);
     text-decoration: none;
     text-transform: uppercase;
@@ -110,8 +85,8 @@ p, a {
 }
 
 .hero-buttons a:first-child:hover {
-    background-color: var(--primary-color);
-    color: var(--tertiary-color-light);
+    background-color: white;
+    color: var(--primary-color);
 }
 
 .hero-buttons a:last-child::after {
@@ -120,6 +95,9 @@ p, a {
 
 .scroll-arrow {
     display: flex;
+    position: absolute;
+    top: 25%;
+    right: 0;
     flex-flow: column;
     align-items: flex-end;
     justify-content: center;
@@ -131,6 +109,53 @@ p, a {
 
 .scroll-arrow p:last-child {
     margin-top: 2em;
+}
+
+/* Medium Laptop */
+
+@media screen and ( max-width: 1200px ) {
+    .hero {
+        width: 70%;
+    }
+}
+
+/* Tablet Width */
+
+@media screen and ( max-width: 768px ) {
+    .landing {
+        padding: calc(15vh + 2.5rem) 5rem 8rem 5rem;
+    }
+
+    .hero {
+        width: 80%;
+    }
+
+    .hero-buttons {
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .hero-buttons a:last-child {
+        padding: .5em 0;
+    }
+}
+
+@media screen and ( max-width: 576px ) {
+    .logo-mobile {
+        height: fit-content;
+        width: fit-content;
+        margin-right: 1em;
+        margin-top: 1em;
+        padding: .5em;
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+    }
+
+    .landing {
+        padding: calc(15vh + 2.5rem) 2.5rem 8rem 2.5rem;
+    }
 }
 
 /* Career Section -- (Adi) */
@@ -361,7 +386,7 @@ footer hr {
     color: #fff;
 }
 
-@media(max-width: 992px) {
+@media screen and (max-width: 992px) {
     .contact-section {
         grid-template-columns: 1fr;
     }

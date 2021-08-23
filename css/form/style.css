@@ -4,9 +4,20 @@
  * * --secondary-color: rgba(0, 66, 114, 0.9);
  * * --tertiary-color-dark: rgba(61, 61, 61, 1);
  * * --tertiary-color-light: rgba(255, 255, 255, 1);
+ * ! Screen Width for Media Query
+ * * Device Width (Reference: https://getbootstrap.com/docs/5.0/layout/breakpoints/
+ * * X-Small < 576px
+ * * Small >= 576px
+ * * Medium >= 768px
+ * * Large >= 992px
+ * * Extra Large >= 1200px
+ * * Extra Extra Large >= 1400px
+ * ! Text Weight
+ * * --text-bold: 1000;
  * ! Property Values:
  * * Paragraph and Link Font Size -> font-size: 1.2em
  * * Container -> padding: 0 8rem;
+ * * -> Top and Bottom = 0 & Left and Right = 8rem
  ******************************************************/
 
 /* Style Variables */
@@ -17,60 +28,15 @@
 
 @import '../fonts.css';
 
+/* Reboot Style -- (Rafli) */
+
+@import '../reboot.css';
+
+/* Navbar -- (Rafli) */
+
+@import '../navbar.css';
+
 /* Main Style */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Work Sans';
-}
-
-p, a {
-    font-size: 1.2em;
-}
-
-.navbar {
-    height: 10vh;
-    width: 100vw;
-    padding: 2.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    font-weight: 1000;
-}
-
-.logo a {
-    color: var(--primary-color);
-    text-decoration: none;
-}
-
-.navigation {
-    width: 40%;
-}
-
-.nav-list {
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-    font-size: 1.25em;
-}
-
-.nav-link a {
-    color: inherit;
-    text-decoration: none;
-}
-
-#lang-select {
-    border: none;
-    font: inherit;
-    text-transform: uppercase;
-    cursor: pointer;
-}
 
 main {
     padding: calc(15vh + 2.5rem) 8rem 3rem 8rem;
