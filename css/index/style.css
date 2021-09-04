@@ -48,6 +48,17 @@
     color: white;
 }
 
+.backdrop {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('../../assets/img/landing.png');
+    background-size: cover;
+    transform: rotateY(180deg);
+    z-index: -1;
+}
+
 .hero {
     width: 50%;
 }
@@ -89,6 +100,10 @@
     color: var(--primary-color);
 }
 
+.hero-buttons a:last-child {
+    text-transform: uppercase;
+}
+
 .hero-buttons a:last-child::after {
     content: ' \2197';
 }
@@ -97,7 +112,7 @@
     display: flex;
     position: absolute;
     top: 25%;
-    right: 0;
+    right: 2.5%;
     flex-flow: column;
     align-items: flex-end;
     justify-content: center;
@@ -109,6 +124,10 @@
 
 .scroll-arrow p:last-child {
     margin-top: 2em;
+}
+
+.scroll-down {
+    display: none;
 }
 
 /* Medium Laptop */
@@ -140,10 +159,44 @@
     }
 }
 
-@media screen and ( max-width: 576px ) {
+/* Mobile Width */
 
+@media screen and ( max-width: 576px ) {
     .landing {
         padding: calc(15vh + 2.5rem) 2.5rem 8rem 2.5rem;
+    }
+
+    .hero {
+        width: 100%;
+    }
+
+    .scroll-arrow {
+        display: none;
+    }
+
+    .scroll-down {
+        height: fit-content;
+        width: fit-content;
+        margin-right: auto;
+        margin-left: auto;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        position: absolute;
+        right: 0;
+        bottom: 2.5%;
+        left: 0;
+    }
+
+    .scroll-down > svg {
+        margin-top: .25em;
+        font-size: 1.5em;
+    }
+}
+
+@media screen and ( max-width: 320px ) {
+    .scroll-down {
+        bottom: -25%;
     }
 }
 
