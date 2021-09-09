@@ -78,34 +78,35 @@ app.get('/id', (req, res) => {
  * * The reason is we don't have email for send from website to owner
  * * Still not tested
  */
-// app.post('/email', (req, res) => {
-//     let transporter = nodemailer.createTransport({
-//         service: 'gmail',
-//         auth: {
-//             user: process.env.EMAIL_USERNAME,
-//             pass: process.env.EMAIL_PASSWORD
-//         }
-//     });
-//     transporter.sendMail({
-//         from: '\"Edwin Consultant\" <example@gmail.com>',
-//         to: 'edwin@gmail.com',
-//         subject: req.body.subject,
-//         html: `
-//             <p style="color:red;">Attention! If there is a link embeded in email body, please do not click it for security measure!</p>
-//             <hr>
-//             <p style="color:red;">Perhatian! Jika terdapat sebuah link tercantum pada body email ini, mohon untuk tidak mengklik-nya untuk tindakan keamanan!</p>
-//             <hr>
-//             ${req.body.content}
-//         `
-//     }, (err, data) => {
-//         if (err) {
-//             console.log('Error on sending email:', err);
-//             res.status(500).send({ msg: 'Error on sending email', reason: err });
-//         } else {
-//             console.log('Email sent successfully');
-//             res.status(200).send({ msg: 'Email send successfully' });
-//         }
-//     })
-// });
+app.post('/email', (req, res) => {
+    let transporter = nodemailer.createTransport({
+        service: 'gmail',
+        host: 'smtp.gmail.com',
+        auth: {
+            user: process.env.EMAIL_USERNAME,
+            pass: process.env.EMAIL_PASSWORD
+        }
+    })
+    transporter.sendMail({
+        from: `\"Edwin Consultant\" <${process.env.EMAIL_USERNAME}@gmail.com>`,
+        to: 'rafli.jaskandi@gmail.com',
+        subject: req.body.subject,
+        html: `
+            <p style="color:red;">Attention! If there is a link embeded in email body, please do not click it for security measure!</p>
+            <hr>
+            <p style="color:red;">Perhatian! Jika terdapat sebuah link tercantum pada body email ini, mohon untuk tidak mengklik-nya untuk tindakan keamanan!</p>
+            <hr>
+            ${req.body.content}
+        `
+    }, (err, data) => {
+        if (err) {
+            console.log('Error on sending email:', err);
+            res.status(500).send({ msg: 'Error on sending email', reason: err });
+        } else {
+            console.log('Email sent successfully');
+            res.status(200).send({ msg: 'Email send successfully' });
+        }
+    })
+});
 
 app.listen(PORT, console.log(`Server is running on http://localhost or 127.0.0.1`));
