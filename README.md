@@ -8,3 +8,5 @@ Dikerjakan oleh tim berisikan:
 - Hafizh Naufal Hizbullah | Github
 - Rafli Athala Jaskandi | [Github](https://github.com/VladRafli)
 - Adi Adyana | Github
+
+1.
