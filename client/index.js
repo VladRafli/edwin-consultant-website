@@ -7,7 +7,7 @@ require('dotenv').config();
 
 const app = express();
 
-const PORT = process.env.PORT || 80; // In production, the PORT must 443 (HTTPS) and issue SSL for server
+const PORT = process.env.PORT || 80;
 
 app.use(express.json());
 app.use(morgan('tiny'));
@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.get('/', (req, res) => {
     res.header('Cache-control', 'max-age=0, no-cache, no-store, must-revalidate');
     res.header('Expires', 'Thu, 01 Jan 1970 00:00:00 GMT');
-    res.header('Pramga', 'no-cache');
+    res.header('Pragma', 'no-cache');
     res.sendFile(path.join(__dirname, '/src/redirect.html'));
 });
 /**
@@ -89,13 +89,34 @@ app.post('/email', (req, res) => {
     })
     transporter.sendMail({
         from: `\"Edwin Consultant\" <${process.env.EMAIL_USERNAME}@gmail.com>`,
-        to: 'rafli.jaskandi@gmail.com',
+        to: process.env.EMAIL_DEST,
         subject: req.body.subject,
         html: `
-            <p style="color:red;">Attention! If there is a link embeded in email body, please do not click it for security measure!</p>
-            <hr>
-            <p style="color:red;">Perhatian! Jika terdapat sebuah link tercantum pada body email ini, mohon untuk tidak mengklik-nya untuk tindakan keamanan!</p>
-            <hr>
+            <!DOCTYPE html>
+            <html>
+                <head>
+                    <meta charset="utf-8">
+                    <style>
+                        .warning-msg {
+                            padding: 1em;
+                            border: 1px solid red;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="warning-msg">
+                        <p style="color:orange;">Perhatian! Jika terdapat sebuah link tercantum pada body email ini, mohon untuk tidak mengklik-nya untuk tindakan keamanan!</p>
+                    </div>
+                    <div class="content">
+                        <p>Nama: ${req.body.content.name}</p>
+                        <p>Nomor Telepon: ${req.body.content.phone}</p>
+                        <p>Perusahaan: ${req.body.content.company}</p>
+                        <p>Jabatan: ${req.body.content.position}</p>
+                        <p>Email: ${req.body.content.email}</p>
+                        <p>Pesan: <br> ${req.body.content.message}</p>
+                    </div>
+                </body>
+            </html>
             ${req.body.content}
         `
     }, (err, data) => {
@@ -109,4 +130,4 @@ app.post('/email', (req, res) => {
     })
 });
 
-app.listen(PORT, console.log(`Server is running on http://localhost or 127.0.0.1`));
+app.listen(PORT, console.log(`Server is running on http://localhost:${PORT} or 127.0.0.1:${PORT}`));
