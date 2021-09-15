@@ -201,12 +201,34 @@
 }
 
 /* Career Section -- (Adi) */
-.career-section {
+.career-heading {
+    padding: 4rem 8rem 1rem;
+    text-align: center;
+}
+
+.career-heading span {
+    color: var(--primary-color);
+    font-weight: bold;
+    display: block;
+    padding: .5rem 0;
+}
+
+.career-heading h2 {
+    font-size: 2em;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.career-heading p {
+    padding: 2rem 3rem 1rem;
+    color: var(--secondary-color);
+    line-height: 2;
+}
+
+.career-content {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    width: 90%;
-    margin: auto;
-    padding: 3% 0;
+    padding: 5rem 8rem;
 }
 
 .career-img {
@@ -284,9 +306,7 @@
 .contact-section {
     display: grid;
     grid-template-columns: 3fr 5fr;
-    width: 90%;
-    margin: auto;
-    padding: 3% 0 5%;
+    padding: 2rem 8rem 5rem;
 }
 
 .contact-text {
@@ -345,21 +365,59 @@
     filter: drop-shadow(0px 16px 24px rgba(0, 0, 0, 0.06)) drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.04)) drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.04));
 }
 
+@media screen and ( max-width: 576px ) {
+    .career-heading {
+        padding: 3rem 2.5rem;
+    }
+
+    .career-heading p {
+        padding: 2rem 1rem 0;
+    }
+
+    .career-content {
+        padding: 3rem 2.5rem;
+    }
+
+    .contact-section {
+        padding: 3rem 2.5rem;
+    }
+}
+
+@media screen and ( max-width: 768px ) {
+    .career-heading {
+        padding: 3rem 2.5rem;
+    }
+
+    .career-heading p {
+        padding: 2rem 1rem 0;
+    }
+
+    .career-content {
+        padding: 3rem 2.5rem;
+    }
+
+    .contact-section {
+        padding: 3rem 2.5rem;
+    }
+}
+
 
 @media screen and (max-width: 992px) {
     .contact-section {
         grid-template-columns: 1fr;
     }
 
-    .career-section {
-        grid-template-columns: 1fr;
-    }
-
-    .career-detail {
+    .career-content {
         grid-template-columns: 1fr;
     }
 
     .career-text {
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .career-detail {
+        grid-template-columns: 1fr;
     }
 }
