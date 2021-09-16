@@ -280,6 +280,41 @@
     color: var(--primary-color);
 }
 
+/* Career Hedaer -- (Centsu) */
+.career-header {
+    display: grid;
+    width: 90%;
+    margin: auto;
+    padding: 2% 0;
+}
+
+.career-desc {
+    width: 90%;
+    margin: 2rem auto 0;
+}
+
+.career-desc h2 {
+    color: var(--secondary-color);
+    font-size: 2em;
+    padding: .5rem 0;
+    text-align: center;
+}
+
+.career-desc h3 {
+    color: var(--primary-color);
+    font-size: 1em;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.career-desc p {
+    margin-top: 1rem;
+    margin: 1rem 4rem 0 4rem;
+    line-height: 2;
+    color: var(--tertiary-color-dark);
+    text-align: center;
+}
+
 /* Contact Us Section -- (Adi) */
 .contact-section {
     display: grid;
