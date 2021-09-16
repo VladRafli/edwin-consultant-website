@@ -1,0 +1,312 @@
+/******************************************************
+ * ! Variables:
+ * * --primary-color: rgba(45, 156, 219, 1);
+ * * --secondary-color: rgba(0, 66, 114, 0.9);
+ * * --tertiary-color-dark: rgba(61, 61, 61, 1);
+ * * --tertiary-color-light: rgba(255, 255, 255, 1);
+ * ! Screen Width for Media Query
+ * * Device Width (Reference: https://getbootstrap.com/docs/5.0/layout/breakpoints/
+ * * X-Small < 576px
+ * * Small >= 576px
+ * * Medium >= 768px
+ * * Large >= 992px
+ * * Extra Large >= 1200px
+ * * Extra Extra Large >= 1400px
+ * ! Text Weight
+ * * --text-bold: 1000;
+ * ! Property Values:
+ * * Paragraph and Link Font Size -> font-size: 1.2em
+ * * Container -> padding: 0 8rem;
+ * * -> Top and Bottom = 0 & Left and Right = 8rem
+ ******************************************************/
+
+/* Style Variables */
+
+@import '../root.css';
+
+/* Fonts */
+
+@import '../fonts.css';
+
+/* Reboot Style -- (Rafli) */
+
+@import '../reboot.css';
+
+/* Navbar -- (Rafli) */
+
+@import '../navbar.css';
+
+/* Footer Section -- (Adi) */
+
+@import '../footer.css';
+
+/* Landing -- (Rafli) */
+
+.landing {
+    padding: calc(15vh + 2.5rem) 8rem 8rem 8rem;
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.hero {
+    width: 50%;
+}
+
+.hero h1 {
+    margin-bottom: 1em;
+    font-size: 2.5em;
+}
+
+.hero p {
+    margin-bottom: 2.5em;
+}
+
+.hero-buttons a {
+    padding: .5em 1.5em;
+    color: inherit;
+    font-weight: bold;
+}
+
+.hero-buttons {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 100%;
+    gap: 1em;
+}
+
+.hero-buttons a:first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: .5s;
+}
+
+.hero-buttons a:first-child:hover {
+    background-color: white;
+    color: var(--primary-color);
+}
+
+.hero-buttons a:last-child::after {
+    content: ' \2197';
+}
+
+.scroll-arrow {
+    display: flex;
+    position: absolute;
+    top: 25%;
+    right: 0;
+    flex-flow: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.scroll-arrow p:first-child {
+    transform: rotate(-90deg);
+}
+
+.scroll-arrow p:last-child {
+    margin-top: 2em;
+}
+
+/* Medium Laptop */
+
+@media screen and ( max-width: 1200px ) {
+    .hero {
+        width: 70%;
+    }
+}
+
+/* Tablet Width */
+
+@media screen and ( max-width: 768px ) {
+    .landing {
+        padding: calc(15vh + 2.5rem) 5rem 8rem 5rem;
+    }
+
+    .hero {
+        width: 80%;
+    }
+
+    .hero-buttons {
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .hero-buttons a:last-child {
+        padding: .5em 0;
+    }
+}
+
+@media screen and ( max-width: 576px ) {
+
+    .landing {
+        padding: calc(15vh + 2.5rem) 2.5rem 8rem 2.5rem;
+    }
+}
+
+/* Career Section -- (Adi) */
+.career-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    width: 90%;
+    margin: auto;
+    padding: 3% 0;
+}
+
+.career-img {
+    width: 100%;
+    background-image: url(../../assets/img/career.png);
+    background-size: cover;
+    background-position-x: 70%;
+    border-radius: 5px;
+    min-height: 200px;
+}
+
+/* .career-img img {
+    width: 100%;
+} */
+
+.career-text {
+    width: 90%;
+    margin: 1rem auto 0;
+}
+
+.career-text h2 {
+    color: var(--secondary-color);
+    font-size: 2em;
+    padding: .5rem 0;
+}
+
+.career-text h3 {
+    color: var(--primary-color);
+    font-size: 1em;
+    letter-spacing: 2px;
+}
+
+.career-detail {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.career-req {
+    padding: 1rem 0;
+}
+
+.career-req h3 {
+    color: var(--tertiary-color-dark);
+    letter-spacing: 0;
+}
+
+.career-req ul, .career-req ol {
+    margin: .5rem 2rem;
+}
+
+.career-req ul li, .career-req ol li {
+    line-height: 2;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.career-text button {
+    width: 100%;
+    padding: 1rem 0;
+    letter-spacing: 1px;
+    background-color: var(--primary-color);
+    color: var(--tertiary-color-light);
+    border: 1px solid var(--primary-color);
+    cursor: pointer;
+    border-radius: 5px;
+    transition: .3s;
+}
+
+.career-text button:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+}
+
+/* Contact Us Section -- (Adi) */
+.contact-section {
+    display: grid;
+    grid-template-columns: 3fr 5fr;
+    width: 90%;
+    margin: auto;
+    padding: 3% 0 5%;
+}
+
+.contact-text {
+    margin-top: 2rem;
+    margin-right: 2rem;
+}
+
+.contact-text h2 {
+    color: var(--secondary-color);
+    font-size: 2em;
+    padding-bottom: 1rem;
+}
+
+.contact-text h3 {
+    color: var(--primary-color);
+    padding: 1rem 0;
+    font-size: 1em;
+    letter-spacing: 1px;
+}
+
+.contact-text p {
+    margin-right: 2rem;
+    line-height: 2;
+    color: var(--tertiary-color-dark);
+}
+
+.contact-text ul {
+    padding-left: 2rem;
+}
+
+.contact-text ul li {
+    line-height: 2;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.contact-text a {
+    display: block;
+    margin-top: 2rem;
+    color: var(--secondary-color);
+    font-size: 1.25em;
+    transition: .3s;
+}
+
+.contact-text a:hover {
+    color: var(--primary-color);
+}
+
+.contact-maps {
+    margin: 0 3%;
+    margin-top: 2rem;
+    min-height: 300px;
+}
+
+.contact-maps iframe {
+    border-radius: 5px;
+    filter: drop-shadow(0px 16px 24px rgba(0, 0, 0, 0.06)) drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.04)) drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.04));
+}
+
+
+@media screen and (max-width: 992px) {
+    .contact-section {
+        grid-template-columns: 1fr;
+    }
+
+    .career-section {
+        grid-template-columns: 1fr;
+    }
+
+    .career-detail {
+        grid-template-columns: 1fr;
+    }
+
+    .career-text {
+        width: 100%;
+    }
+}

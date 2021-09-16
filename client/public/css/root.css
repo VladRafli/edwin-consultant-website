@@ -1,0 +1,9 @@
+:root {
+    /* Color Pallete */
+    --primary-color: rgba(45, 156, 219, 1);
+    --secondary-color: rgba(0, 66, 114, 0.9);
+    --tertiary-color-dark: rgba(61, 61, 61, 1);
+    --tertiary-color-light: rgba(255, 255, 255, 1);
+    /* Font Weight */
+    --text-bold: 1000;
+}

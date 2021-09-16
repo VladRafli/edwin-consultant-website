@@ -1,0 +1,151 @@
+/******************************************************
+ * ! Variables:
+ * * --primary-color: rgba(45, 156, 219, 1);
+ * * --secondary-color: rgba(0, 66, 114, 0.9);
+ * * --tertiary-color-dark: rgba(61, 61, 61, 1);
+ * * --tertiary-color-light: rgba(255, 255, 255, 1);
+ * ! Screen Width for Media Query
+ * * Device Width (Reference: https://getbootstrap.com/docs/5.0/layout/breakpoints/
+ * * X-Small < 576px
+ * * Small >= 576px
+ * * Medium >= 768px
+ * * Large >= 992px
+ * * Extra Large >= 1200px
+ * * Extra Extra Large >= 1400px
+ * ! Text Weight
+ * * --text-bold: 1000;
+ * ! Property Values:
+ * * Paragraph and Link Font Size -> font-size: 1.2em
+ * * Container -> padding: 0 8rem;
+ * * -> Top and Bottom = 0 & Left and Right = 8rem
+ ******************************************************/
+
+/* Style Variables */
+
+@import '../root.css';
+
+/* Fonts */
+
+@import '../fonts.css';
+
+/* Reboot Style -- (Rafli) */
+
+@import '../reboot.css';
+
+/* Navbar -- (Rafli) */
+
+@import '../navbar.css';
+
+/* Footer -- (Adi) */
+
+@import '../footer.css';
+
+/* Main Style */
+
+.menu-button {
+    color: black;
+}
+
+main {
+    padding: calc(15vh + 2.5rem) 8rem 3rem 8rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 5em;
+}
+
+.about-header {
+    margin-bottom: 1em;
+}
+
+.service-name {
+    color: var(--primary-color);
+}
+
+@media screen and ( max-width: 1200px ) {
+    .main {
+        padding: calc(15vh + 2.5rem) 5rem 3rem 5rem;
+    }
+}
+
+@media screen and ( max-width: 768px ) {
+    .main {
+        padding: calc(15vh + 2.5rem) 3rem 3rem 3rem;
+        grid-template-columns: 1fr;
+    }
+
+    .about-header {
+        text-align: center;
+    }
+
+    .about-desc {
+        text-align: justify;
+    }
+
+    .form {
+        grid-template-rows: 3em 3em 3em 3em 3em 3em 10em 2em;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "name"
+        "phone"
+        "company"
+        "position"
+        "email"
+        "subject"
+        "message"
+        "button"
+        ;
+        border-top: .1em solid rgba(0, 0, 0, 0.04);
+    }
+}
+
+@media screen and ( max-width: 576px ) {
+    .main {
+        padding: calc(15vh + 2.5rem) 1rem 3rem 1rem;
+    }
+}
+
+form {
+    padding: 1em;
+    display: grid;
+    grid-template-rows: 3em 3em 3em 3em 10em 2em;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "name phone"
+    "company position"
+    "email email"
+    "subject subject"
+    "message message"
+    "button button";
+    gap: 1.5em;
+    border-right: .2em solid rgba(0, 0, 0, 0.04);
+    border-bottom: .3em solid rgba(0, 0, 0, 0.04);
+    border-left: .2em solid rgba(0, 0, 0, 0.04);
+    box-shadow: .3em .75em rgba(0, 0, 0, 0.07);
+}
+
+form > input, textarea {
+    height: 100%;
+    padding: 1em;
+    font: inherit;
+    border: 2px solid grey;
+}
+
+form > textarea {
+    resize: none;
+}
+
+form > #email {
+    grid-area: email;
+}
+
+form > #subject {
+    grid-area: subject;
+}
+
+form > #message {
+    grid-area: message;
+}
+
+form > #button {
+    grid-area: button;
+}
