@@ -30,28 +30,6 @@
         crossorigin="anonymous"></script>
     <!-- Global Scripts (Load after document fully loaded) -->
     <script defer src="./js/script.js"></script>
-    <!-- Navbar Behaviour (Load after document fully loaded) -->
-    <script defer>
-        // Sorry, I'm bad at naming variables
-        const elPos = 435;
-        const sectEnd = 800;
-        $(window).on('scroll', () => {
-            if (window.innerWidth > 426) {
-                if (window.pageYOffset >= elPos) {
-                    $('.navbar').addClass('navbar-contrast');
-                    $('.menu-button').addClass('menu-button-contrast');
-                } else if (window.pageYOffset < elPos) {
-                    $('.navbar').removeClass('navbar-contrast');
-                    $('.menu-button').removeClass('menu-button-contrast');
-                }
-            }
-            if (window.pageYOffset >= sectEnd) {
-                $('.menu-button').addClass('menu-button-contrast');
-            } else if (window.pageYOffset < sectEnd) {
-                $('.menu-button').removeClass('menu-button-contrast');
-            }
-        });
-    </script>
 </head>
 
 <body>
@@ -92,15 +70,18 @@
     <!-- End of Header -->
     <!-- Main Content -->
     <main>
-        <!-- Menu Button (For Mobile) -->
-        <div class="menu-button">
-            <i class="fas fa-bars"></i>
-        </div>
-        <div class="logo-mobile">
-            <img src="" alt="Logo">
-        </div>
+        <!-- Mobile Navbar -->
+        <header class="mobile-nav">
+            <div class="menu-button">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="logo-mobile">
+                <img src="" alt="Logo">
+            </div>
+        </header>
         <!-- Landing -->
         <section class="landing">
+            <div class="backdrop"></div>
             <section class="hero">
                 <h1>Navigate Your <br> Business With Our Experts</h1>
                 <p>Edwin Consultants has been helping businesses all across Indonesia to grow for more than 30 years
@@ -110,6 +91,10 @@
                     <a href="#" id="whatsapp">Chat with us</a>
                 </section>
             </section>
+            <div class="scroll-down">
+                <p>See more</p>
+                <i class="fas fa-chevron-down"></i>
+            </div>
             <div class="scroll-arrow">
                 <p>See more</p>
                 <!-- Arrow is not available at the moment -->
@@ -241,6 +226,39 @@
         </section>
     </footer>
     <!-- End of Footer -->
+    <!-- Landing Backdrop Behaviour -->
+    <script defer>
+        /**
+         * * This is for landing backdrop to be responsive to element above it.
+         **/
+        $(window).on('load', () => {
+            $('.backdrop').attr('style', `height: calc(${$('.hero').innerHeight()}px + 15vh + 2.5rem + 8rem)`);
+        });
+        $(window).on('resize', () => {
+            $('.backdrop').attr('style', `height: calc(${$('.hero').innerHeight()}px + 15vh + 2.5rem + 8rem)`);
+        });
+    </script>
+    <!-- Navbar Behaviour (Load after document fully loaded) -->
+    <script defer>
+        // Sorry, I'm bad at naming variables
+        const elPos = 435;
+        $(window).on('scroll', () => {
+            if (window.innerWidth > 426) {
+                if (window.pageYOffset >= elPos) {
+                    $('.navbar').addClass('navbar-contrast');
+                    $('.menu-button').addClass('menu-button-contrast');
+                } else if (window.pageYOffset < elPos) {
+                    $('.navbar').removeClass('navbar-contrast');
+                    $('.menu-button').removeClass('menu-button-contrast');
+                }
+            }
+            if (window.pageYOffset >= $('.backdrop').innerHeight() - 50) {
+                $('.mobile-nav').addClass('mobile-nav-contrast');
+            } else if (window.pageYOffset < $('.backdrop').innerHeight() - 50) {
+                $('.mobile-nav').removeClass('mobile-nav-contrast');
+            }
+        });
+    </script>
 </body>
 
 </html>

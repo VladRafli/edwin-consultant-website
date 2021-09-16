@@ -55,10 +55,14 @@ main {
 
 .about-header {
     margin-bottom: 1em;
+    color: var(--primary-color);
+    font-size: 1em;
+    text-transform: uppercase;
 }
 
 .service-name {
-    color: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: 2.5em;
 }
 
 @media screen and ( max-width: 1200px ) {
@@ -107,7 +111,7 @@ main {
 form {
     padding: 1em;
     display: grid;
-    grid-template-rows: 3em 3em 3em 3em 10em 2em;
+    grid-template-rows: 3em 3em 3em 3em 10em 3em;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 
     "name phone"
@@ -134,6 +138,22 @@ form > textarea {
     resize: none;
 }
 
+form > #name {
+    grid-area: name;
+}
+
+form > #phone {
+    grid-area: phone;
+}
+
+form > #company {
+    grid-area: company;
+}
+
+form > #position {
+    grid-area: position;
+}
+
 form > #email {
     grid-area: email;
 }
@@ -148,4 +168,9 @@ form > #message {
 
 form > #button {
     grid-area: button;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
 }

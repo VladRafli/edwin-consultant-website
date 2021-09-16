@@ -15,7 +15,7 @@
     width: 100%;
     padding: 2.5rem;
     display: grid;
-    grid-template-columns: 1fr 1.25fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 100%;
     position: fixed;
     color: white;
@@ -58,6 +58,14 @@
     color: black;
 }
 
+/* Large Laptop */
+
+@media screen and ( max-width: 1200px ) {
+    .navbar {
+        grid-template-columns: 1fr 1.25fr;
+    }
+}
+
 /* Small Laptop */
 
 @media screen and ( max-width: 992px ) {
@@ -77,6 +85,16 @@
 /* Large Mobile  */
 
 @media screen and ( max-width: 576px ) {
+    .mobile-nav {
+        height: calc(10vh + 1em);
+        width: 100%;
+        position: fixed;
+    }
+
+    .mobile-nav-contrast {
+        background-color: var(--secondary-color);
+    }
+
     .menu-button {
         display: block;
         height: fit-content;
@@ -88,10 +106,6 @@
         margin-left: 1em;
         margin-top: 1em;
         color: white;
-    }
-
-    .menu-button-contrast {
-        color: black;
     }
 
     .logo-mobile {
