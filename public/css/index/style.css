@@ -234,48 +234,35 @@
     text-align: left;
 }
 
-/* Career Header -- (Centsu) */
-.career-header {
-    display: grid;
-    width: 90%;
-    margin: auto;
-    padding: 2% 0;
-}
-
-.career-desc {
-    width: 90%;
-    margin: 2rem auto 0;
-}
-
-.career-desc h2 {
-    color: var(--secondary-color);
-    font-size: 2em;
-    padding: .5rem 0;
-    text-align: center;
-}
-
-.career-desc h3 {
-    color: var(--primary-color);
-    font-size: 1em;
-    letter-spacing: 2px;
-    text-align: center;
-}
-
-.career-desc p {
-    margin-top: 1rem;
-    margin: 1rem 4rem 0 4rem;
-    line-height: 2;
-    color: var(--tertiary-color-dark);
-    text-align: center;
-}
-
 /* Career Section -- (Adi) */
-.career-section {
+.career-heading {
+    padding: 4rem 8rem 1rem;
+    text-align: center;
+}
+
+.career-heading span {
+    color: var(--primary-color);
+    font-weight: bold;
+    display: block;
+    padding: .5rem 0;
+}
+
+.career-heading h2 {
+    font-size: 2em;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.career-heading p {
+    padding: 2rem 3rem 1rem;
+    color: var(--secondary-color);
+    line-height: 2;
+}
+
+.career-content {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    width: 90%;
-    margin: auto;
-    padding: 3% 0;
+    padding: 2rem 8rem 5rem;
 }
 
 .career-img {
@@ -353,9 +340,7 @@
 .contact-section {
     display: grid;
     grid-template-columns: 3fr 5fr;
-    width: 90%;
-    margin: auto;
-    padding: 3% 0 5%;
+    padding: 2rem 8rem 5rem;
 }
 
 .contact-text {
@@ -414,21 +399,59 @@
     filter: drop-shadow(0px 16px 24px rgba(0, 0, 0, 0.06)) drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.04)) drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.04));
 }
 
+@media screen and ( max-width: 576px ) {
+    .career-heading {
+        padding: 3rem 2.5rem 1rem;
+    }
+
+    .career-heading p {
+        padding: 2rem 1rem 0;
+    }
+
+    .career-content {
+        padding: 3rem 2.5rem;
+    }
+
+    .contact-section {
+        padding: 3rem 2.5rem;
+    }
+}
+
+@media screen and ( max-width: 768px ) {
+    .career-heading {
+        padding: 3rem 2.5rem 1rem;
+    }
+
+    .career-heading p {
+        padding: 2rem 1rem 0;
+    }
+
+    .career-content {
+        padding: 3rem 2.5rem;
+    }
+
+    .contact-section {
+        padding: 3rem 2.5rem;
+    }
+}
+
 
 @media screen and (max-width: 992px) {
     .contact-section {
         grid-template-columns: 1fr;
     }
 
-    .career-section {
-        grid-template-columns: 1fr;
-    }
-
-    .career-detail {
+    .career-content {
         grid-template-columns: 1fr;
     }
 
     .career-text {
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .career-detail {
+        grid-template-columns: 1fr;
     }
 }
