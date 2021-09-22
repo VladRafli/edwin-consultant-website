@@ -228,7 +228,7 @@
 .career-content {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    padding: 5rem 8rem;
+    padding: 2rem 8rem 5rem;
 }
 
 .career-img {
@@ -367,7 +367,7 @@
 
 @media screen and ( max-width: 576px ) {
     .career-heading {
-        padding: 3rem 2.5rem;
+        padding: 3rem 2.5rem 1rem;
     }
 
     .career-heading p {
@@ -385,7 +385,7 @@
 
 @media screen and ( max-width: 768px ) {
     .career-heading {
-        padding: 3rem 2.5rem;
+        padding: 3rem 2.5rem 1rem;
     }
 
     .career-heading p {
