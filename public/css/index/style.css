@@ -239,7 +239,12 @@
 .about-values {
     padding: .5rem 8rem 5rem;
     display: grid;
-    grid-template-columns: 2fr 2fr 2fr 2fr;
+    grid-template-columns: 1fr 3fr;
+}
+
+.value-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .value-title span {
@@ -670,6 +675,31 @@
 
 
 @media screen and (max-width: 992px) {
+    .about-history {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .about-values {
+        grid-template-columns: 1fr; 
+    }
+
+    .value-title {
+        padding-bottom: 1rem;
+    }
+    
+    .value-item img {
+        width: 25%;
+    }
+
+    .service-content {
+        padding: 5rem 5rem;
+    }
+
+    .service-item {
+        padding: 3rem 0;
+        margin: auto .3rem;
+    }
+
     .contact-section {
         grid-template-columns: 1fr;
     }
@@ -684,6 +714,22 @@
 }
 
 @media screen and (max-width: 1200px) {
+    .about-values {
+        grid-template-columns: 1fr; 
+    }
+    
+    .value-title {
+        padding-bottom: 1rem;
+    }
+    
+    .value-title {
+        padding-bottom: 1rem;
+    }
+    
+    .value-item img {
+        width: 22%;
+    }
+
     .career-detail {
         grid-template-columns: 1fr;
     }
