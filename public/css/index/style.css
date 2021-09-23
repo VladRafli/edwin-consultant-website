@@ -233,6 +233,7 @@
     background-size: cover;
     border-radius: 5px;
     background-position-x: 50%;
+    min-height: 200px;
 }
 
 .about-values {
@@ -278,7 +279,7 @@
 /* Service Section -- (Centsu) */
 .service-section {
     background: #f6faff;
-    box-shadow: inset 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 12px 10px -12px rgba(0, 0, 0, 0.2) inset, 0 -12px 10px -12px rgba(0, 0, 0, 0.2) inset;;
 }
 
 .service-content{
@@ -339,6 +340,10 @@
     padding-left: 1rem;
 }
 
+.service-btn {
+    padding-top: 1rem;
+}
+
 .service-btn a {
     color: var(--tertiary-color-light);
     font-weight: bold;
@@ -361,7 +366,8 @@
 
 .service-btn a:first-child:hover {
     background-color: white;
-    color: var(--primary-color);
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
 }
 
 /* Career Section -- (Adi) */
@@ -530,6 +536,48 @@
 }
 
 @media screen and ( max-width: 576px ) {
+    .about-history {
+        padding: 5rem 2.5rem 1rem;
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+   .about-history p {
+        padding: 2rem 0rem;
+    }
+
+    .about-values {
+        padding: 3rem 2.5rem;
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .value-title {
+        padding-bottom: 1rem;
+    }
+
+    .value-item {
+        padding: 1rem 0 0;
+    }
+
+    .service-content {
+        padding: 3rem 2.5rem 1rem;
+    }
+
+    .row {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .service-title {
+        padding-bottom: 2rem;
+    }
+
+    .service-item {
+        padding: 2rem 0rem;
+        margin: 1rem 0rem;
+    }
+    
     .career-heading {
         padding: 3rem 2.5rem 1rem;
     }
@@ -548,6 +596,61 @@
 }
 
 @media screen and ( max-width: 768px ) {
+    .about-history {
+        padding: 5rem 2.5rem 1rem;
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+   .about-history p {
+        padding: 2rem 0rem;
+    }
+
+    .history-img {
+        width: 100%;
+        background-position-y: 50%;
+    }
+
+    .about-values {
+        padding: 3rem 2.5rem;
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .value-title {
+        padding-bottom: 1rem;
+    }
+
+    .value-item {
+        padding: 1rem 0 0;
+    }
+
+    .value-item img{
+        width: 10%;
+    }
+
+    .service-content {
+        padding: 3rem 2.5rem 1rem;
+    }
+
+    .row {
+        display: grid;
+        grid-template-columns: 1fr; 
+    }
+
+    .service-title {
+        padding-bottom: 2rem;
+    }
+
+    .service-item {
+        padding: 2rem 0rem;
+        margin: 1rem 0rem;
+    }
+    
+    .service-item img {
+        width: 10%;
+    }
+
     .career-heading {
         padding: 3rem 2.5rem 1rem;
     }
