@@ -87,7 +87,7 @@
                 <p>Edwin Consultants has been helping businesses all across Indonesia to grow for more than 30 years
                     with our all-encompassing management, accounting and taxation services.</p>
                 <section class="hero-buttons">
-                    <a href="#" id="form">Consultation for free</a>
+                    <a href="" id="form">Consultation for free</a>
                     <a href="#" id="whatsapp">Chat with us</a>
                 </section>
             </section>
@@ -369,6 +369,7 @@
                 $('.mobile-nav').removeClass('mobile-nav-contrast');
             }
         });
+        $('.hero-buttons > #form').attr('href', `${window.location.href}/contact`);
     </script>
 </body>
 
