@@ -5,7 +5,7 @@
  * * --tertiary-color-dark: rgba(61, 61, 61, 1);
  * * --tertiary-color-light: rgba(255, 255, 255, 1);
  * ! Screen Width for Media Query
- * * Device Width (Reference: https://getbootstrap.com/docs/5.0/layout/breakpoints/
+ * * Device Width (Reference: https://getbootstrap.com/docs/5.0/layout/breakpoints/)
  * * X-Small < 576px
  * * Small >= 576px
  * * Medium >= 768px
@@ -40,7 +40,7 @@
 
 @import '../footer.css';
 
-/* Main Style */
+/* Main Style -- Rafli */
 
 .menu-button {
     color: black;
@@ -173,4 +173,5 @@ form > #button {
     border: none;
     font-weight: bold;
     text-transform: uppercase;
+    cursor: pointer;
 }

@@ -5,18 +5,21 @@
     <!-- Primary Meta Tags -->
     <title>Edwin Consultant</title>
     <meta name="title" content="Edwin Consultant">
-    <meta name="description" content="Description Here!">
+    <meta name="description" content="Edwin Consultants has been helping businesses all across Indonesia to grow for more than 30 years
+    with our all-encompassing management, accounting and taxation services.">
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="localhost">
+    <meta property="og:url" content="https://edwinconsultant.com">
     <meta property="og:title" content="Edwin Consultant">
-    <meta property="og:description" content="Description Here!">
+    <meta property="og:description" content="Edwin Consultants has been helping businesses all across Indonesia to grow for more than 30 years
+    with our all-encompassing management, accounting and taxation services.">
     <meta property="og:image" content="images.png">
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="localhost">
+    <meta property="twitter:url" content="https://edwinconsultant.com">
     <meta property="twitter:title" content="Edwin Consultant">
-    <meta property="twitter:description" content="Description Here!">
+    <meta property="twitter:description" content="Edwin Consultants has been helping businesses all across Indonesia to grow for more than 30 years
+    with our all-encompassing management, accounting and taxation services.">
     <meta property="twitter:image" content="images.png">
     <!-- Charset and Viewport -->
     <meta charset="UTF-8">
@@ -40,8 +43,8 @@
             <i class="fas fa-times"></i>
         </div>
         <h1 class="logo">
-            <a href="#">
-                <img src="#" alt="Logo">
+            <a href="">
+                <img src="/assets/img/logo.png" alt="Logo">
             </a>
         </h1>
         <nav class="navigation">
@@ -76,7 +79,7 @@
                 <i class="fas fa-bars"></i>
             </div>
             <div class="logo-mobile">
-                <img src="" alt="Logo">
+                <img src="/assets/img/logo.png" alt="Logo">
             </div>
         </header>
         <!-- Landing -->
@@ -97,7 +100,7 @@
             </div>
             <div class="scroll-arrow">
                 <p>See more</p>
-                <!-- Arrow is not available at the moment -->
+                <img src="/assets/img/Arrow%201.svg" alt="">
             </div>
         </section>
         <!-- End of Landing -->
@@ -112,7 +115,6 @@
                     </p>
                 </div>
                 <div class="history-img">
-                    <!-- <img src="assets/img/history.png" alt="Career Tax Accountants Associate"> -->
                 </div>
             </div>
             
@@ -223,7 +225,6 @@
             </div>
             <div class="career-content">
                 <div class="career-img">
-                    <!-- <img src="assets/img/career.png" alt="Career Tax Accountants Associate"> -->
                 </div>
                 <div class="career-text">
                     <h2>TAX ACCOUNTANTS ASSOCIATE</h2>
@@ -337,7 +338,6 @@
         </section>
     </footer>
     <!-- End of Footer -->
-    <!-- Landing Backdrop Behaviour -->
     <script defer>
         /**
          * * This is for landing backdrop to be responsive to element above it.
@@ -348,28 +348,33 @@
         $(window).on('resize', () => {
             $('.backdrop').attr('style', `height: calc(${$('.hero').innerHeight()}px + 15vh + 2.5rem + 8rem)`);
         });
-    </script>
-    <!-- Navbar Behaviour (Load after document fully loaded) -->
-    <script defer>
-        // Sorry, I'm bad at naming variables
-        const elPos = 435;
-        $(window).on('scroll', () => {
+        /**
+         * * This is for Navbar Behaviour
+         **/
+         $(window).on('scroll', () => {
             if (window.innerWidth > 426) {
-                if (window.pageYOffset >= elPos) {
+                if (window.pageYOffset >= 10) {
                     $('.navbar').addClass('navbar-contrast');
                     $('.menu-button').addClass('menu-button-contrast');
-                } else if (window.pageYOffset < elPos) {
+                } else if (window.pageYOffset < 10) {
                     $('.navbar').removeClass('navbar-contrast');
                     $('.menu-button').removeClass('menu-button-contrast');
                 }
             }
-            if (window.pageYOffset >= $('.backdrop').innerHeight() - 50) {
+            if (window.pageYOffset >= 10) {
                 $('.mobile-nav').addClass('mobile-nav-contrast');
-            } else if (window.pageYOffset < $('.backdrop').innerHeight() - 50) {
+            } else if (window.pageYOffset < 10) {
                 $('.mobile-nav').removeClass('mobile-nav-contrast');
             }
         });
-        $('.hero-buttons > #form').attr('href', `${window.location.href}/contact`);
+        // Create dynamic href link
+        if (localStorage.getItem('language') === 'en') {
+            $('.hero-buttons > #form').attr('href', `${window.location.origin}/en/contact`);
+            $('.logo > a').attr('href', `${window.location.origin}/en`);
+        } else if (localStorage.getItem('language') === 'id') {
+            $('.hero-buttons > #form').attr('href', `${window.location.origin}/id/contact`);
+            $('.logo > a').attr('href', `${window.location.origin}/id`);
+        }
     </script>
 </body>
 

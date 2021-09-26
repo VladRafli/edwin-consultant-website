@@ -38,23 +38,23 @@
             <i class="fas fa-times"></i>
         </div>
         <h1 class="logo">
-            <a href="#">
-                <img src="" alt="Logo">
+            <a href="">
+                <img src="/assets/img/logo.png" alt="Logo">
             </a>
         </h1>
         <nav class="navigation">
             <ul class="nav-list">
                 <li class="nav-link">
-                    <a href="#">About</a>
+                    <a href="" id="nav-about">About</a>
                 </li>
                 <li class="nav-link">
-                    <a href="#">Services</a>
+                    <a href="" id="nav-services">Services</a>
                 </li>
                 <li class="nav-link">
-                    <a href="#">Career</a>
+                    <a href="" id="nav-career">Career</a>
                 </li>
                 <li class="nav-link">
-                    <a href="#">Contact Us</a>
+                    <a href="" id="nav-contact">Contact Us</a>
                 </li>
                 <li class="nav-link">
                     <select name="lang" id="lang-select">
@@ -154,7 +154,19 @@
     <!-- Form Page Behaviour -->
     <script src="/js/form.js" defer></script>
     <script defer>
-        // $('.navbar > .logo > a').attr('href', `${window.location.href.}`)
+        if (localStorage.getItem('language') === 'en') {
+            $('.logo > a').attr('href', `${window.location.origin}/en`);
+            $('.nav-list > .nav-link > #nav-about').attr('href', `${window.location.origin}/en#about`);
+            $('.nav-list > .nav-link > #nav-services').attr('href', `${window.location.origin}/en#services`);
+            $('.nav-list > .nav-link > #nav-career').attr('href', `${window.location.origin}/en#career`);
+            $('.nav-list > .nav-link > #nav-contact').attr('href', `${window.location.origin}/en#contact`);
+        } else if (localStorage.getItem('language') === 'id') {
+            $('.logo > a').attr('href', `${window.location.origin}/id`);
+            $('.nav-list > .nav-link > #nav-about').attr('href', `${window.location.origin}/id#about`);
+            $('.nav-list > .nav-link > #nav-services').attr('href', `${window.location.origin}/id#services`);
+            $('.nav-list > .nav-link > #nav-career').attr('href', `${window.location.origin}/id#career`);
+            $('.nav-list > .nav-link > #nav-contact').attr('href', `${window.location.origin}/id#contact`);
+        }
     </script>
 </body>
 

@@ -27,9 +27,13 @@
     background-color: var(--secondary-color);
 }
 
-.logo a {
+.logo > a {
     color: white;
     text-decoration: none;
+}
+
+.logo > a > img {
+    height: 100%;
 }
 
 .nav-list {
@@ -39,7 +43,7 @@
     font-size: 1.25em;
 }
 
-.nav-link a {
+.nav-link > a {
     color: inherit;
     text-decoration: none;
 }
@@ -106,6 +110,7 @@
         margin-left: 1em;
         margin-top: 1em;
         color: white;
+        cursor: pointer;
     }
 
     .logo-mobile {
@@ -120,6 +125,10 @@
         right: 0;
     }
 
+    .logo-mobile > img {
+        height: 2.5rem;
+    }
+
     .menu-button > svg {
         font-size: 2em;
     }
@@ -129,13 +138,16 @@
     }
 
     .close-menu-button {
+        height: fit-content;
+        width: fit-content;
         display: block;
-        display: absolute;
         color: white;
+        cursor: pointer;
+        z-index: 1;
     }
 
     .close-menu-button > svg {
-        font-size: 2em;
+        font-size: 2rem;
     }
 
     .navbar {
@@ -151,6 +163,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    .logo > a > img {
+        height: 5rem;
     }
 
     .nav-list {

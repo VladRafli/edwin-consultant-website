@@ -10,6 +10,7 @@ const app = express();
 const PORT = process.env.PORT || 80;
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(morgan('tiny'));
 app.use(cors());
 
@@ -73,15 +74,12 @@ app.get('/id', (req, res) => {
 
 /**
  * Route for Sending Email
- * 
- * ! This route is disabled for now
- * * The reason is we don't have email for send from website to owner
- * * Still not tested
  */
 app.post('/email', (req, res) => {
+    console.log(req.body);
     let transporter = nodemailer.createTransport({
-        service: 'gmail',
-        host: 'smtp.gmail.com',
+        service: process.env.EMAIL_SERVICE,
+        host: process.env.EMAIL_SERVICE_HOST,
         auth: {
             user: process.env.EMAIL_USERNAME,
             pass: process.env.EMAIL_PASSWORD
@@ -95,29 +93,34 @@ app.post('/email', (req, res) => {
             <!DOCTYPE html>
             <html>
                 <head>
-                    <meta charset="utf-8">
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
                     <style>
                         .warning-msg {
-                            padding: 1em;
-                            border: 1px solid red;
+                            padding: 1rem;
+                            border: 2px solid red;
+                            background-color: rgba(255, 165, 0, .5);
+                            font-size: 1.1rem;
+                            font-weight: bold;
                         }
                     </style>
                 </head>
                 <body>
                     <div class="warning-msg">
-                        <p style="color:orange;">Perhatian! Jika terdapat sebuah link tercantum pada body email ini, mohon untuk tidak mengklik-nya untuk tindakan keamanan!</p>
+                        <p>Perhatian! Jika terdapat sebuah link tercantum pada body email ini, mohon untuk tidak mengklik-nya sebagai tindakan keamanan!</p>
                     </div>
+                    <h1>${req.body.subject}</h1>
                     <div class="content">
+                        <h2>Detail:</h2>
                         <p>Nama: ${req.body.content.name}</p>
                         <p>Nomor Telepon: ${req.body.content.phone}</p>
                         <p>Perusahaan: ${req.body.content.company}</p>
                         <p>Jabatan: ${req.body.content.position}</p>
                         <p>Email: ${req.body.content.email}</p>
-                        <p>Pesan: <br> ${req.body.content.message}</p>
+                        <p>Pesan: ${req.body.content.message}</p>
                     </div>
                 </body>
             </html>
-            ${req.body.content}
         `
     }, (err, data) => {
         if (err) {
