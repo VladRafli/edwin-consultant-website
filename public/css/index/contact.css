@@ -1,0 +1,275 @@
+.contact-section {
+    display: grid;
+    grid-template-columns: 3fr 5fr;
+    padding: 2rem 8rem 5rem;
+}
+
+.contact-text {
+    margin-top: 2rem;
+    margin-right: 2rem;
+}
+
+.contact-text h2 {
+    color: var(--secondary-color);
+    font-size: 2em;
+    padding-bottom: 1rem;
+}
+
+.contact-text h3 {
+    color: var(--primary-color);
+    padding: 1rem 0;
+    font-size: 1em;
+    letter-spacing: 1px;
+}
+
+.contact-text p {
+    margin-right: 2rem;
+    line-height: 2;
+    color: var(--tertiary-color-dark);
+}
+
+.contact-text ul {
+    padding-left: 2rem;
+}
+
+.contact-text ul li {
+    line-height: 2;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.contact-text a {
+    display: block;
+    margin-top: 2rem;
+    color: var(--secondary-color);
+    font-size: 1.25em;
+    transition: .3s;
+}
+
+.contact-text a:hover {
+    color: var(--primary-color);
+}
+
+.contact-maps {
+    margin: 0 3%;
+    margin-top: 2rem;
+    min-height: 300px;
+}
+
+.contact-maps iframe {
+    border-radius: 5px;
+    filter: drop-shadow(0px 16px 24px rgba(0, 0, 0, 0.06)) drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.04)) drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.04));
+}
+
+@media screen and (max-width: 1200px) {
+    .about-values {
+        grid-template-columns: 1fr; 
+    }
+    
+    .value-title {
+        padding-bottom: 1rem;
+    }
+    
+    .value-title {
+        padding-bottom: 1rem;
+    }
+    
+    .value-item img {
+        width: 22%;
+    }
+
+    .career-detail {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .about-history {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .about-values {
+        grid-template-columns: 1fr; 
+    }
+
+    .value-title {
+        padding-bottom: 1rem;
+    }
+    
+    .value-item img {
+        width: 25%;
+    }
+
+    .service-content {
+        padding: 5rem 5rem;
+    }
+
+    .service-item {
+        padding: 3rem 0;
+        margin: auto .3rem;
+    }
+
+    .contact-section {
+        grid-template-columns: 1fr;
+    }
+
+    .career-content {
+        grid-template-columns: 1fr;
+    }
+
+    .career-text {
+        width: 100%;
+    }
+}
+
+@media screen and ( max-width: 768px ) {
+    .about-history {
+        padding: 5rem 2.5rem 1rem;
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+   .about-history p {
+        padding: 2rem 0rem;
+    }
+
+    .history-img {
+        width: 100%;
+        background-position-y: 50%;
+    }
+
+    .about-values {
+        padding: 3rem 2.5rem;
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .value-detail {
+        grid-template-columns: 1fr;
+    }
+
+    .value-title {
+        padding-bottom: 1rem;
+    }
+
+    .value-item {
+        padding: 1rem 0 0;
+    }
+
+    .value-item img{
+        width: 10%;
+    }
+
+    .service-content {
+        padding: 3rem 2.5rem 1rem;
+    }
+
+    .row {
+        display: grid;
+        grid-template-columns: 1fr; 
+    }
+
+    .service-title {
+        padding-bottom: 2rem;
+    }
+
+    .service-item {
+        padding: 2rem 0rem;
+        margin: 1rem 0rem;
+    }
+    
+    .service-item img {
+        width: 10%;
+    }
+
+    .career-heading {
+        padding: 3rem 2.5rem 1rem;
+    }
+
+    .career-heading p {
+        padding: 2rem 1rem 0;
+    }
+
+    .career-content {
+        padding: 3rem 2.5rem;
+    }
+
+    .contact-section {
+        padding: 3rem 2.5rem;
+    }
+}
+
+@media screen and ( max-width: 576px ) {
+    .about-history {
+        padding: 5rem 2.5rem 1rem;
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+   .about-history p {
+        padding: 2rem 0rem;
+    }
+
+    .about-values {
+        padding: 3rem 2.5rem;
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .value-detail {
+        grid-template-columns: 1fr;
+    }
+
+    .value-title {
+        padding-bottom: 1rem;
+    }
+
+    .value-item {
+        padding: 1rem 0 0;
+    }
+
+    .value-item img{
+        width: 17.5%;
+    }
+
+    .service-content {
+        padding: 3rem 2.5rem 1rem;
+    }
+
+    .row {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .service-title {
+        padding-bottom: 2rem;
+    }
+
+    .service-item {
+        padding: 2rem 0rem;
+        margin: 1rem 0rem;
+    }
+
+    .service-item ol {
+        margin: .5rem 2rem;
+    }
+
+    .service-btn a {
+        margin: auto 2rem;
+    }
+    
+    .career-heading {
+        padding: 3rem 2.5rem 1rem;
+    }
+
+    .career-heading p {
+        padding: 2rem 1rem 0;
+    }
+
+    .career-content {
+        padding: 3rem 2.5rem;
+    }
+
+    .contact-section {
+        padding: 3rem 2.5rem;
+    }
+}

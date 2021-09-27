@@ -1,0 +1,92 @@
+.service-section {
+    background: #f6faff;
+    box-shadow: 0 16px 24px rgba(0, 0, 0, .04) inset, 0 4px 8px rgba(0, 0, 0, .04) inset, 0 0 1px rgba(0, 0, 0, .04) inset, 0 -16px 24px rgba(0, 0, 0, 4%) inset, 0 -4px 8px rgba(0, 0, 0, .04) inset, 0 0 1px rgba(0, 0, 0, .04);
+}
+
+.service-content{
+    padding: 5rem 8rem;
+    text-align: center;
+}
+
+.service-title {
+    padding-bottom: 3rem;
+}
+
+.service-title span {
+    color: var(--primary-color);
+    font-weight: bold;
+    display: block;
+    padding: .5rem 0;
+}
+
+.service-title h2 {
+    font-size: 2em;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.service-item {
+    padding: 3rem .5rem;
+    margin: auto 1rem;
+    background: var(--tertiary-color-light);
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+    box-shadow: 0 16px 24px rgba(0, 0, 0, .04) inset, 0 4px 8px rgba(0, 0, 0, .04) inset, 0 0 1px rgba(0, 0, 0, .04) inset, 0 -16px 24px rgba(0, 0, 0, 4%) inset, 0 -4px 8px rgba(0, 0, 0, .04) inset, 0 0 1px rgba(0, 0, 0, .04);
+}
+
+.service-item img {
+    width: 15%;
+}
+
+.service-item h3 {
+    color: var(--secondary-color);
+    letter-spacing: 0;
+    padding: 1rem 0 1.5rem;
+}
+
+.service-item ol {
+    margin: .5rem 4rem;
+    padding-left: 1rem;
+}
+
+.service-item ol li {
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.6);
+    text-align: left;
+    padding: .2rem;
+    padding-left: 1rem;
+}
+
+.service-btn {
+    padding-top: 1rem;
+}
+
+.service-btn a {
+    color: var(--tertiary-color-light);
+    font-weight: bold;
+    margin: auto 4rem;
+    padding: .5em 1.5em;
+    border: 1px solid var(--primary-color);
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.service-btn a:first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: .5s;
+}
+
+.service-btn a:first-child:hover {
+    background-color: white;
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}

@@ -1,0 +1,157 @@
+.landing {
+    padding: calc(15vh + 2.5rem) 8rem 8rem 8rem;
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.backdrop {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('../../assets/img/landing.png');
+    background-size: cover;
+    transform: rotateY(180deg);
+    z-index: -1;
+}
+
+.hero {
+    width: 50%;
+}
+
+.hero h1 {
+    margin-bottom: 1em;
+    font-size: 2.5em;
+}
+
+.hero p {
+    margin-bottom: 2.5em;
+}
+
+.hero-buttons a {
+    padding: .5em 1.5em;
+    color: inherit;
+    font-weight: bold;
+}
+
+.hero-buttons {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 100%;
+    gap: 1em;
+}
+
+.hero-buttons a:first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: .5s;
+}
+
+.hero-buttons a:first-child:hover {
+    background-color: white;
+    color: var(--primary-color);
+}
+
+.hero-buttons a:last-child {
+    text-transform: uppercase;
+}
+
+.hero-buttons a:last-child::after {
+    content: ' \2197';
+}
+
+.scroll-arrow {
+    display: flex;
+    position: absolute;
+    top: 25%;
+    right: 2.5%;
+    flex-flow: column;
+    align-items: flex-end;
+}
+
+.scroll-arrow > p {
+    transform: rotate(-90deg);
+}
+
+.scroll-arrow > img {
+    margin-top: 2.5rem;
+    margin-right: 1.7rem;
+}
+
+.scroll-down {
+    display: none;
+}
+
+/* Medium Laptop */
+
+@media screen and ( max-width: 1200px ) {
+    .hero {
+        width: 70%;
+    }
+}
+
+/* Tablet Width */
+
+@media screen and ( max-width: 768px ) {
+    .landing {
+        padding: calc(15vh + 2.5rem) 5rem 8rem 5rem;
+    }
+
+    .hero {
+        width: 80%;
+    }
+
+    .hero-buttons {
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .hero-buttons a:last-child {
+        padding: .5em 0;
+    }
+}
+
+/* Mobile Width */
+
+@media screen and ( max-width: 576px ) {
+    .landing {
+        padding: calc(15vh + 2.5rem) 2.5rem 8rem 2.5rem;
+    }
+
+    .hero {
+        width: 100%;
+    }
+
+    .scroll-arrow {
+        display: none;
+    }
+
+    .scroll-down {
+        height: fit-content;
+        width: fit-content;
+        margin-right: auto;
+        margin-left: auto;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        position: absolute;
+        right: 0;
+        bottom: 20%;
+        left: 0;
+    }
+
+    .scroll-down > svg {
+        margin-top: .25em;
+        font-size: 1.5em;
+    }
+}
+
+@media screen and ( max-width: 320px ) {
+    .scroll-down {
+        bottom: 2.5%;
+    }
+}
