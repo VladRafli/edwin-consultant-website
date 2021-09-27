@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 80;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(morgan('tiny'));
+app.use(morgan('combined'));
 app.use(cors());
 
 /**
@@ -86,7 +86,7 @@ app.post('/email', (req, res) => {
         }
     })
     transporter.sendMail({
-        from: `\"Edwin Consultant\" <${process.env.EMAIL_USERNAME}@gmail.com>`,
+        from: `\"Edwin Consultant\" <${process.env.EMAIL_USERNAME}>`,
         to: process.env.EMAIL_DEST,
         subject: req.body.subject,
         html: `
