@@ -35,7 +35,8 @@
     margin: auto 1rem;
     background: var(--tertiary-color-light);
     -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .2);
-    box-shadow: 0 16px 24px rgba(0, 0, 0, .04) inset, 0 4px 8px rgba(0, 0, 0, .04) inset, 0 0 1px rgba(0, 0, 0, .04) inset, 0 -16px 24px rgba(0, 0, 0, 4%) inset, 0 -4px 8px rgba(0, 0, 0, .04) inset, 0 0 1px rgba(0, 0, 0, .04);
+    box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+    border-radius: 5px;
 }
 
 .service-item img {

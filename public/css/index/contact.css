@@ -77,6 +77,16 @@
         width: 22%;
     }
 
+    .row {
+        display: grid;
+        grid-template-columns: 1fr; 
+    }
+
+    .service-item {
+        padding: 2rem 0rem;
+        margin: 1rem 0rem;
+    }
+
     .career-detail {
         grid-template-columns: 1fr;
     }
@@ -103,9 +113,14 @@
         padding: 5rem 5rem;
     }
 
+    .row {
+        display: grid;
+        grid-template-columns: 1fr; 
+    }
+
     .service-item {
-        padding: 3rem 0;
-        margin: auto .3rem;
+        padding: 2rem 0rem;
+        margin: 1rem 0rem;
     }
 
     .contact-section {
