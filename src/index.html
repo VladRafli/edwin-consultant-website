@@ -268,16 +268,11 @@
                     Jl. Raya Kertajaya Indah Timur 14C No.12 Kompleks Mega Galaxy, Surabaya, Indonesia.
                 </p>
                 <ul>
-                    <li>+623-1596-5966 / +623-1599-2656 (Phone)</li>
-                    <li>+628-2141-0049-79 (Whatsapp)</li>
-                    <li>+623-1599-2684 (Fax)</li>
+                    <li>+6231-596-5966 / +6231-599-2656 (Phone)</li>
+                    <li>+62821-4100-4979 (Whatsapp)</li>
+                    <li>+6231-599-2684 (Fax)</li>
                     <li>admin@edwinconsultant.com</li>
                 </ul>
-                <!-- Versi Dengan Logo Whatsapp -->
-                <!-- <a href="https://wa.me/6282141004979">
-                    <img src="assets/img/whatsappIcon.svg" alt="">
-                    CHAT WITH US
-                </a> -->
                 <a href="https://wa.me/6282141004979">CHAT WITH US</a>
             </div>
             <div class="contact-maps">
@@ -297,7 +292,7 @@
                 <h3>COMPANY</h3>
                 <ul>
                     <li><a href="#about">About Edwin Consultation</a></li>
-                    <li><a href="">Consultation Online</a></li> <!-- Ini Harusnya Ada di Js -->
+                    <li><a href="" id="contact-footer">Consultation Online</a></li>
                     <li><a href="#contact">Contact Us</a></li>
                 </ul>
             </div>
@@ -312,16 +307,15 @@
             <div class="footer-links">
                 <h3>CAREER</h3>
                 <ul>
-                    <li><a href="#about">Why Join Us?</a></li>
+                    <li><a href="#career">Why Join Us?</a></li>
                     <li><a href="#career">Job Vacancy</a></li>
                 </ul>
             </div>
             <div class="footer-links">
                 <h3>GET IN TOUCH</h3>
                 <ul>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Twitter</a></li>
-                    <li><a href="#">Instagram</a></li>
+                    <li><a href="https://wa.me/6282141004979">Whatsapp</a></li>
+                    <li><a href="mailto:admin@edwinconsultant.com">Email</a></li>
                 </ul>
             </div>
         </section>
@@ -375,9 +369,11 @@
         if (localStorage.getItem('language') === 'en') {
             $('.hero-buttons > #form').attr('href', `${window.location.origin}/en/contact`);
             $('.logo > a').attr('href', `${window.location.origin}/en`);
+            $('#contact-footer').attr('href', `${window.location.origin}/en/contact`);
         } else if (localStorage.getItem('language') === 'id') {
             $('.hero-buttons > #form').attr('href', `${window.location.origin}/id/contact`);
             $('.logo > a').attr('href', `${window.location.origin}/id`);
+            $('#contact-footer').attr('href', `${window.location.origin}/id/contact`);
         }
     </script>
 </body>
