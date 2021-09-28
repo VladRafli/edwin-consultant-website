@@ -1,5 +1,5 @@
 .career-heading {
-    padding: 4rem 8rem 1rem;
+    padding: 8rem 8rem 1rem;
     text-align: center;
 }
 
@@ -25,7 +25,7 @@
 .career-content {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    padding: 2rem 8rem 5rem;
+    padding: 2rem 8rem .5rem;
 }
 
 .career-img {

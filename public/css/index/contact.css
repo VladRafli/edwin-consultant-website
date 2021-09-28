@@ -1,7 +1,7 @@
 .contact-section {
     display: grid;
     grid-template-columns: 3fr 5fr;
-    padding: 2rem 8rem 5rem;
+    padding: 6rem 8rem 5rem;
 }
 
 .contact-text {
@@ -42,11 +42,22 @@
     margin-top: 2rem;
     color: var(--secondary-color);
     font-size: 1.25em;
-    transition: .3s;
+    transition: .5s;
+    padding: .5em 0;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.contact-text a img {
+    width: 18px;
 }
 
 .contact-text a:hover {
     color: var(--primary-color);
+}
+
+.contact-text a::after {
+    content: ' \2197';
 }
 
 .contact-maps {
