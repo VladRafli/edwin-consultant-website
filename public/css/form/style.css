@@ -65,6 +65,11 @@ main {
     font-size: 2.5em;
 }
 
+.about-desc {
+    line-height: 1.7;
+    color: rgba(0, 0, 0, 0.6);
+}
+
 @media screen and ( max-width: 1200px ) {
     .main {
         padding: calc(15vh + 2.5rem) 5rem 3rem 5rem;
