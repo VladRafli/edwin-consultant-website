@@ -2,6 +2,7 @@
     padding: calc(15vh + 2.5rem) 8rem 8rem 8rem;
     background-color: var(--secondary-color);
     color: white;
+    position: relative;
 }
 
 .backdrop {
@@ -140,7 +141,7 @@
         align-items: center;
         position: absolute;
         right: 0;
-        bottom: 20%;
+        bottom: 2rem;
         left: 0;
     }
 

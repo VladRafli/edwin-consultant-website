@@ -20,7 +20,7 @@
     position: fixed;
     color: white;
     font-weight: var(--font-bold);
-    z-index: 1;
+    z-index: 2;
 }
 
 .navbar-contrast {
@@ -93,6 +93,7 @@
         height: calc(10vh + 1em);
         width: 100%;
         position: fixed;
+        z-index: 1;
     }
 
     .mobile-nav-contrast {
@@ -156,7 +157,7 @@
         grid-template-columns: 100%;
         grid-template-rows: 0 1fr 2fr;
         background-color: rgba(0, 0, 0, .75);
-        z-index: 1;
+        z-index: 2;
     }
 
     .logo {

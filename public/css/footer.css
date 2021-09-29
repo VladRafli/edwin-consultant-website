@@ -50,6 +50,10 @@ footer hr {
     padding: 1rem 0;
 }
 
+.footer-language a {
+    text-decoration: none;
+}
+
 .footer-language span {
     color: rgb(255, 255, 255, 0.5);
     padding-right: .5rem;
@@ -68,14 +72,16 @@ footer hr {
 .footer-cr {
     display: flex;
     justify-content: space-between;
-    padding-top: 2rem;
+    align-items: flex-end;
+    padding-top: 1rem;
 }
 
 .footer-cr .copyright {
     color: rgb(255, 255, 255, 0.5);
     font-size: .8em;
+    margin-bottom: .5rem;
 }
 
-.footer-logo {
-    color: #fff;
+.footer-logo img {
+    width: 100px;
 }
