@@ -77,16 +77,10 @@ app.get('/id', (req, res) => {
  */
 app.post('/email', (req, res) => {
     console.log(req.body);
-    let useTLSOption = '';
-    if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV == null) {
-        useTLSOption = 'false';
-    } else if (process.env.NODE_ENV === 'production') {
-        useTLSOption = 'true';
-    }
     let transporter = nodemailer.createTransport({
         host: process.env.EMAIL_SERVICE_HOST,
         port: process.env.EMAIL_SERVICE_PORT,
-        secure: useTLSOption,
+        secure: false,
         tls: {
             servername: 'edwinconsultant.com'
         },
