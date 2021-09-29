@@ -80,7 +80,10 @@ app.post('/email', (req, res) => {
     let transporter = nodemailer.createTransport({
         host: process.env.EMAIL_SERVICE_HOST,
         port: process.env.EMAIL_SERVICE_PORT,
-        secure: false,
+        secure: true,
+        tls: {
+            servername: 'edwinconsultant.com'
+        },
         auth: {
             user: process.env.EMAIL_USERNAME,
             pass: process.env.EMAIL_PASSWORD
