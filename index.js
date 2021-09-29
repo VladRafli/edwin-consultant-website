@@ -77,14 +77,30 @@ app.get('/id', (req, res) => {
  */
 app.post('/email', (req, res) => {
     console.log(req.body);
+    let useTLSOption = '';
+    if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV == null) {
+        useTLSOption = 'false';
+    } else if (process.env.NODE_ENV === 'production') {
+        useTLSOption = 'true';
+    }
     let transporter = nodemailer.createTransport({
-        service: process.env.EMAIL_SERVICE,
         host: process.env.EMAIL_SERVICE_HOST,
+        port: process.env.EMAIL_SERVICE_PORT,
+        secure: useTLSOption,
         auth: {
             user: process.env.EMAIL_USERNAME,
             pass: process.env.EMAIL_PASSWORD
         }
-    })
+    });
+    transporter.verify((err, success) => {
+        if (err) {
+            console.log('Error on verifying SMTP connection:', err);
+            res.status(500).send(`Error on verifying SMTP connection: ${err}`);
+            return;
+        } else {
+            console.log('Server is ready to take our messages');
+        }
+    });
     transporter.sendMail({
         from: `\"Edwin Consultant\" <${process.env.EMAIL_USERNAME}>`,
         to: process.env.EMAIL_DEST,
@@ -130,7 +146,7 @@ app.post('/email', (req, res) => {
             console.log('Email sent successfully');
             res.status(200).send({ msg: 'Email send successfully' });
         }
-    })
+    });
 });
 
 app.listen(PORT, console.log(`Server is running on http://localhost:${PORT} or 127.0.0.1:${PORT}`));
