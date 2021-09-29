@@ -87,6 +87,9 @@ app.post('/email', (req, res) => {
         host: process.env.EMAIL_SERVICE_HOST,
         port: process.env.EMAIL_SERVICE_PORT,
         secure: useTLSOption,
+        tls: {
+            servername: 'edwinconsultant.com'
+        },
         auth: {
             user: process.env.EMAIL_USERNAME,
             pass: process.env.EMAIL_PASSWORD
@@ -95,7 +98,7 @@ app.post('/email', (req, res) => {
     transporter.verify((err, success) => {
         if (err) {
             console.log('Error on verifying SMTP connection:', err);
-            res.status(500).send(`Error on verifying SMTP connection: ${err}`);
+            res.status(500).send({msg: `Error on verifying SMTP connection: ${err}`});
             return;
         } else {
             console.log('Server is ready to take our messages');
