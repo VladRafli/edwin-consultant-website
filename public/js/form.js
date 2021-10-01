@@ -32,11 +32,13 @@ document.querySelector('form').addEventListener('submit', (e) => {
             // Display modal of checklisted
             console.log('Successfully send the email...');
             console.log(res);
+            console.log(xhr.responseJSON);
         },
         error: (xhr, status, err) => {
             // Display modal of X
             console.log('Failed to send the email...');
             console.log(err);
+            console.log(xhr.responseJSON);
         }
     })
 });
