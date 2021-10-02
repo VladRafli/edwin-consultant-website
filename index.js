@@ -102,6 +102,7 @@ app.post('/email', (req, res) => {
     transporter.sendMail({
         from: `\"Edwin Consultant\" <${process.env.EMAIL_USERNAME}>`,
         to: process.env.EMAIL_DEST,
+        cc: `${process.env.EMAIL_CC}`,
         subject: req.body.subject,
         html: `
             <!DOCTYPE html>
