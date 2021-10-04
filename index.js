@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
     res.header('Expires', 'Thu, 01 Jan 1970 00:00:00 GMT');
     res.header('Pragma', 'no-cache');
     res.header('Content-Type', 'text/html; charset=utf-8');
-    res.status(301).sendFile(path.join(__dirname, '/src/redirect.html'));
+    res.status(200).sendFile(path.join(__dirname, '/src/redirect.html'));
 });
 /**
  * Route for English Pages
