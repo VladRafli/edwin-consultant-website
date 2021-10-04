@@ -205,12 +205,12 @@
                             <li>Agreed Upon Procedure Services</li>
                             <br><br><br>
                         </ol>
-                        <div class="service-btn">
-                            <a href="#" id="form">SEE MORE DETAILS</a>
+                        <div class="service-btn" id="management-form">
+                            <a href="" id="form">SEE MORE DETAILS</a>
                         </div>
                     </div>
                     <!-- Item 2 -->
-                    <div class="service-item">
+                    <div class="service-item" id="taxation-form">
                         <img src="assets/img/parliament.svg">
                         <h3>Taxation Services</h3>
                         <ol>
@@ -223,8 +223,8 @@
                             </li>
                             <li>Agreed Upon Procedure Services</li>
                         </ol>
-                        <div class="service-btn">
-                            <a href="#" id="form">SEE MORE DETAILS</a>
+                        <div class="service-btn" id="accounting-form">
+                            <a href="" id="form">SEE MORE DETAILS</a>
                         </div>
                     </div>
                     <!-- Item 3 -->
@@ -238,7 +238,7 @@
                             <li>Agreed Upon Procedure Services</li>
                         </ol>
                         <div class="service-btn">
-                            <a href="#" id="form">SEE MORE DETAILS</a>
+                            <a href="" id="form">SEE MORE DETAILS</a>
                         </div>
                     </div>
                 </div>
@@ -359,8 +359,8 @@
         <hr>
         <section class="footer-extention">
             <div class="footer-language">
-                <a href="/en"><span class="footer-active">English</span></a>
-                <a href="/id"><span>Indonesian</span></a>
+                <a href="" id="en-footer"><span class="footer-active">English</span></a>
+                <a href="" id="id-footer"><span>Bahasa Indonesian</span></a>
             </div>
             <div class="footer-cr">
                 <div class="copyright">
@@ -407,10 +407,16 @@
             $('.hero-buttons > #form').attr('href', `${window.location.origin}/en/contact`);
             $('.logo > a').attr('href', `${window.location.origin}/en`);
             $('#contact-footer').attr('href', `${window.location.origin}/en/contact`);
+            $('#management-form > a').attr('href', `${window.location.origin}/en/contact?pid=management`);
+            $('#taxation-form > a').attr('href', `${window.location.origin}/en/contact?pid=taxation`);
+            $('#accounting-form > a').attr('href', `${window.location.origin}/en/contact?pid=accounting`);
         } else if (localStorage.getItem('language') === 'id') {
             $('.hero-buttons > #form').attr('href', `${window.location.origin}/id/contact`);
             $('.logo > a').attr('href', `${window.location.origin}/id`);
             $('#contact-footer').attr('href', `${window.location.origin}/id/contact`);
+            $('#management-form > a').attr('href', `${window.location.origin}/id/contact?pid=management`);
+            $('#taxation-form > a').attr('href', `${window.location.origin}/id/contact?pid=taxation`);
+            $('#accounting-form > a').attr('href', `${window.location.origin}/id/contact?pid=accounting`);
         }
     </script>
 </body>

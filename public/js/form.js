@@ -1,8 +1,32 @@
 const params = new URLSearchParams(window.location.search);
 const pid = params.get('pid');
 // Check GET Param
-if (pid === 'test') {
-    document.querySelector('#subject').setAttribute('value', 'Testing Subject');
+if (pid === 'management') {
+    if(localStorage.getItem('language') === 'en') {
+        document.querySelector('#subject').setAttribute('value', 'Management Services');
+        document.querySelector('.service-name').innerHTML = 'Management Services';
+    } else if(localStorage.getItem('language') === 'id') {
+        document.querySelector('#subject').setAttribute('value', 'Jasa Manajemen');
+        document.querySelector('.service-name').innerHTML = 'Jasa Manajemen';
+    }
+    document.querySelector('#subject').setAttribute('disabled', '');
+} else if (pid === 'taxation') {
+    if(localStorage.getItem('language') === 'en') {
+        document.querySelector('#subject').setAttribute('value', 'Taxation Services');
+        document.querySelector('.service-name').innerHTML = 'Taxation Services';
+    } else if(localStorage.getItem('language') === 'id') {
+        document.querySelector('#subject').setAttribute('value', 'Jasa Perpajakan');
+        document.querySelector('.service-name').innerHTML = 'Jasa Perpajakan';
+    }
+    document.querySelector('#subject').setAttribute('disabled', '');
+} else if (pid === 'accounting') {
+    if(localStorage.getItem('language') === 'en') {
+        document.querySelector('#subject').setAttribute('value', 'Accounting Services');
+        document.querySelector('.service-name').innerHTML = 'Accounting Services';
+    } else if(localStorage.getItem('language') === 'id') {
+        document.querySelector('#subject').setAttribute('value', 'Jasa Akuntansi');
+        document.querySelector('.service-name').innerHTML = 'Jasa Akuntansi';
+    }
     document.querySelector('#subject').setAttribute('disabled', '');
 }
 // Disable reload on submit
