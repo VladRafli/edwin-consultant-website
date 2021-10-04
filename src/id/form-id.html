@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Primary Meta Tags -->
+    <title>Service Name</title>
+    <meta name="title" content="Title Here!">
+    <meta name="description" content="Description Here!">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="localhost">
+    <meta property="og:title" content="Title Here!">
+    <meta property="og:description" content="Description Here!">
+    <meta property="og:image" content="images.png">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="localhost">
+    <meta property="twitter:title" content="Title Here!">
+    <meta property="twitter:description" content="Description Here!">
+    <meta property="twitter:image" content="images.png">
+    <!-- Charset and Viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/form/style.css">
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js" integrity="sha512-YSdqvJoZr83hj76AIVdOcvLWYMWzy6sJyIMic2aQz5kh2bPTd9dzY3NtdeEAzPp/PhgZqr4aJObB3ym/vsItMg==" crossorigin="anonymous"></script>
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Global Scripts (Load after document fully loaded) -->
+    <script defer src="/js/script.js"></script>
+</head>
+
+<body>
+    <!-- Header / Navigation -->
+    <header class="navbar hide-navbar navbar-contrast">
+        <!-- Close Menu Button (For Mobile) -->
+        <div class="close-menu-button">
+            <i class="fas fa-times"></i>
+        </div>
+        <h1 class="logo">
+            <a href="">
+                <img src="/assets/img/logo.png" alt="Logo">
+            </a>
+        </h1>
+        <nav class="navigation">
+            <ul class="nav-list">
+                <li class="nav-link">
+                    <a href="" id="nav-about">About</a>
+                </li>
+                <li class="nav-link">
+                    <a href="" id="nav-services">Services</a>
+                </li>
+                <li class="nav-link">
+                    <a href="" id="nav-career">Career</a>
+                </li>
+                <li class="nav-link">
+                    <a href="" id="nav-contact">Contact Us</a>
+                </li>
+                <li class="nav-link">
+                    <select name="lang" id="lang-select">
+                        <option value="en" selected>en</option>
+                        <option value="id">id</option>
+                    </select>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- End of Header -->
+    <!-- Form Detail -->
+    <main class="main">
+        <!-- Menu Button with Logo (For Mobile) -->
+        <div class="menu-button">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="logo-mobile">
+            <img src="" alt="Logo">
+        </div>
+        <section class="about">
+            <h1 class="about-header">
+                Pelayanan Kami <br>
+                <span class="service-name">Service Name</span>
+            </h1>
+            <p class="about-desc">
+                Edwin Consultants telah membantu berbagai bisnis di seluruh penjuru Indonesia bertumbuh selama lebih dari 
+                30 tahun dengan layanan manajemen, akuntansi, dan perpajakan kami yang menyeluruh. Kami telah berdiri sejak 
+                tahun 1990 dan terus bertumbuh dengan pesat. Kami melayani lebih dari 200 klien yang terdiri dari orang 
+                pribadi, UMKM, hingga bisnis dalam sektor manufaktur, perdagangan, dan jasa.
+            </p>
+        </section>
+        <form class="form">
+            <input type="text" name="name" id="name" placeholder="Name *" required>
+            <input type="tel" name="phone" id="phone" placeholder="Phone *" required>
+            <input type="text" name="company" id="company" placeholder="Company *" required>
+            <input type="text" name="position" id="position" placeholder="Position *" required>
+            <input type="email" name="email" id="email" placeholder="Email *" required>
+            <input type="text" name="subject" id="subject" placeholder="Subject" required>
+            <textarea name="message" id="message" placeholder="Your Message or Questions"></textarea>
+            <button type="submit" id="button">Send Now</button>
+        </form>
+    </main>
+    <!-- End of Form Detail -->
+    <!-- Footer -->
+    <footer>
+        <section class="footer-section">
+            <div class="footer-links">
+                <h3>PERUSAHAAN</h3>
+                <ul>
+                    <li><a href="#about">Tentang Edwin Consultation</a></li>
+                    <li><a href="" id="contact-footer">Konsultasi Online</a></li>
+                    <li><a href="#contact">Hubungi Kami</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>PELAYANAN</h3>
+                <ul>
+                    <li><a href="#services">Jasa Manajemen</a></li>
+                    <li><a href="#services">Jasa Perpajakan</a></li>
+                    <li><a href="#services">Jasa Akuntansi</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>KARIR</h3>
+                <ul>
+                    <li><a href="#career">MENGAPA HARUS BERGABUNG DENGAN KAMI?</a></li>
+                    <li><a href="#career">Lowongan Pekerjaan</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>HUBUNGI KAMI</h3>
+                <ul>
+                    <li><a href="https://wa.me/6282141004979" target="_blank">Whatsapp</a></li>
+                    <li><a href="mailto:admin@edwinconsultant.com">Email</a></li>
+                </ul>
+            </div>
+        </section>
+        <hr>
+        <section class="footer-extention">
+            <div class="footer-language">
+                <a href="/en"><span class="footer-active">English</span></a>
+                <a href="/id"><span>Bahasa Indonesia</span></a>
+            </div>
+            <div class="footer-cr">
+                <div class="copyright">
+                    <span>&copy; 2021 Edwin Consultants. All Rights Reserved</span>
+                </div>
+                <div class="footer-logo">
+                    <img src="assets/img/edwin-logo-white.png">
+                </div>
+            </div>
+        </section>
+    </footer>
+    <!-- Form Page Behaviour -->
+    <script src="/js/form.js" defer></script>
+    <script defer>
+        // Dynamic Links
+        if (localStorage.getItem('language') === 'en') {
+            $('.logo > a').attr('href', `${window.location.origin}/en`);
+            $('.nav-list > .nav-link > #nav-about').attr('href', `${window.location.origin}/en#about`);
+            $('.nav-list > .nav-link > #nav-services').attr('href', `${window.location.origin}/en#services`);
+            $('.nav-list > .nav-link > #nav-career').attr('href', `${window.location.origin}/en#career`);
+            $('.nav-list > .nav-link > #nav-contact').attr('href', `${window.location.origin}/en#contact`);
+        } else if (localStorage.getItem('language') === 'id') {
+            $('.logo > a').attr('href', `${window.location.origin}/id`);
+            $('.nav-list > .nav-link > #nav-about').attr('href', `${window.location.origin}/id#about`);
+            $('.nav-list > .nav-link > #nav-services').attr('href', `${window.location.origin}/id#services`);
+            $('.nav-list > .nav-link > #nav-career').attr('href', `${window.location.origin}/id#career`);
+            $('.nav-list > .nav-link > #nav-contact').attr('href', `${window.location.origin}/id#contact`);
+        }
+    </script>
+</body>
+
+</html>
