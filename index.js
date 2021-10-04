@@ -29,18 +29,16 @@ app.get('/', (req, res) => {
     res.header('Expires', 'Thu, 01 Jan 1970 00:00:00 GMT');
     res.header('Pragma', 'no-cache');
     res.header('Content-Type', 'text/html; charset=utf-8');
-    res.status(301).sendFile(path.join(__dirname, '/src/redirect.html'));
+    res.status(200).sendFile(path.join(__dirname, '/src/redirect.html'));
 });
 /**
  * Route for English Pages
  */
 app.get('/en', (req, res) => {
-    res.header('Content-Type', 'text/html; charset=utf-8');
     res.sendFile(path.join(__dirname, '/src/en/index.html'));
 });
 
 app.get('/en/contact', (req, res) => {
-    res.header('Content-Type', 'text/html; charset=utf-8');
     const pid = req.query.pid;
     console.log(`PID = '${pid}'\nType = ${typeof pid}\n`);
     if (typeof pid !== 'string' && typeof pid !== 'undefined') {
@@ -69,12 +67,10 @@ app.get('/en/contact', (req, res) => {
  * Route for Indonesia Pages
  */
 app.get('/id', (req, res) => {
-    res.header('Content-Type', 'text/html; charset=utf-8');
     res.sendFile(path.join(__dirname, '/src/id/index.html'));
 });
 
 app.get('/id/contact', (req, res) => {
-    res.header('Content-Type', 'text/html; charset=utf-8');
     const pid = req.query.pid;
     console.log(`PID = '${pid}'\nType = ${typeof pid}\n`);
     if (typeof pid !== 'string' && typeof pid !== 'undefined') {
