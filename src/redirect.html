@@ -45,21 +45,30 @@
             style="display:none;visibility:hidden">
         </iframe>
     </noscript>
+    <p>You being redirected to the website... please wait. <a href="">Click here</a> if you’re not redirected in 5 seconds</p>
     <script>
-        // Default language is English
-        if (localStorage.getItem('language') == null) {
-            localStorage.setItem('language', 'en');
-            window.location.href = '/en';
-        } else {
-            // Get user language preference
-            switch (localStorage.getItem('language')) {
-                case 'en':
-                    window.location.href = '/en';
-                    break;
-                case 'id':
-                    window.location.href = '/id';
-                    break;
+        setTimeout(() => {
+            console.log("Redirecting...");
+            // Default language is English
+            if (localStorage.getItem('language') == null) {
+                localStorage.setItem('language', 'en');
+                window.location.href = '/en';
+            } else {
+                // Get user language preference
+                switch (localStorage.getItem('language')) {
+                    case 'en':
+                        window.location.href = '/en';
+                        break;
+                    case 'id':
+                        window.location.href = '/id';
+                        break;
+                }
             }
+        }, 5000);
+        if (localStorage.getItem('language') == null || localStorage.getItem('language') === 'en') {
+            document.querySelector('a').setAttribute('href', `${window.location.origin}/en`);
+        } else if (localStorage.getItem('language') === 'id') {
+            document.querySelector('a').setAttribute('href', `${window.location.origin}/id`);
         }
     </script>
 </body>

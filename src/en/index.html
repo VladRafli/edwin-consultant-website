@@ -21,9 +21,12 @@
     <meta property="twitter:description" content="Edwin Consultants has been helping businesses all across Indonesia to grow for more than 30 years
     with our all-encompassing management, accounting and taxation services.">
     <meta property="twitter:image" content="images.png">
-    <!-- Charset and Viewport -->
+    <!-- Charset and Viewport + Favicon -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Icon not available -->
+    <!-- <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon"> -->
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="/css/index/style.css">
     <!-- Google Tag Manager -->
     <script>
@@ -365,46 +368,6 @@
         </section>
     </footer>
     <!-- End of Footer -->
-    <script defer>
-        /**
-         * * This is for landing backdrop to be responsive to element above it.
-         **/
-        $(window).on('load', () => {
-            $('.backdrop').attr('style', `height: calc(${$('.hero').innerHeight()}px + 15vh + 2.5rem + 8rem)`);
-        });
-        $(window).on('resize', () => {
-            $('.backdrop').attr('style', `height: calc(${$('.hero').innerHeight()}px + 15vh + 2.5rem + 8rem)`);
-        });
-        /**
-         * * This is for Navbar Behaviour
-         **/
-        $(window).on('scroll', () => {
-            if (window.innerWidth > 426) {
-                if (window.pageYOffset >= 10) {
-                    $('.navbar').addClass('navbar-contrast');
-                    $('.menu-button').addClass('menu-button-contrast');
-                } else if (window.pageYOffset < 10) {
-                    $('.navbar').removeClass('navbar-contrast');
-                    $('.menu-button').removeClass('menu-button-contrast');
-                }
-            }
-            if (window.pageYOffset >= 10) {
-                $('.mobile-nav').addClass('mobile-nav-contrast');
-            } else if (window.pageYOffset < 10) {
-                $('.mobile-nav').removeClass('mobile-nav-contrast');
-            }
-        });
-        // Create dynamic href link
-        if (localStorage.getItem('language') === 'en') {
-            $('.hero-buttons > #form').attr('href', `${window.location.origin}/en/contact`);
-            $('.logo > a').attr('href', `${window.location.origin}/en`);
-            $('#contact-footer').attr('href', `${window.location.origin}/en/contact`);
-        } else if (localStorage.getItem('language') === 'id') {
-            $('.hero-buttons > #form').attr('href', `${window.location.origin}/id/contact`);
-            $('.logo > a').attr('href', `${window.location.origin}/id`);
-            $('#contact-footer').attr('href', `${window.location.origin}/id/contact`);
-        }
-    </script>
 </body>
 
 </html>
