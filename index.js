@@ -50,7 +50,7 @@ app.get('/en/contact', (req, res) => {
         `);
     } else {
         if (pid === undefined || pid === '') {
-            res.sendFile(path.join(__dirname, '/src/form.html'));
+            res.sendFile(path.join(__dirname, '/src/en/form-en.html'));
         } else {
             if ((pid.search('window') !== -1 || pid.search('alert') !== -1 || pid.search('document') !== -1) === true) {
                 res.status(403).send(`
@@ -59,7 +59,7 @@ app.get('/en/contact', (req, res) => {
                     <code>${pid}</code>
                 `);
             } else {
-                res.sendFile(path.join(__dirname, '/src/form.html'));
+                res.sendFile(path.join(__dirname, '/src/en/form-en.html'));
             }
         }
     }
@@ -84,7 +84,7 @@ app.get('/id/contact', (req, res) => {
         `);
     } else {
         if (pid === undefined || pid === '') {
-            res.sendFile(path.join(__dirname, '/src/form.html'));
+            res.sendFile(path.join(__dirname, '/src/id/form-id.html'));
         } else {
             if ((pid.search('window') !== -1 || pid.search('alert') !== -1 || pid.search('document') !== -1) === true) {
                 res.status(403).send(`
@@ -93,7 +93,7 @@ app.get('/id/contact', (req, res) => {
                     <code>${pid}</code>
                 `);
             } else {
-                res.sendFile(path.join(__dirname, '/src/form.html'));
+                res.sendFile(path.join(__dirname, '/src/id/form-id.html'));
             }
         }
     }
