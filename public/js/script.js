@@ -35,25 +35,6 @@ $('#lang-select').on('change', () => {
 $(window).on('resize', () => {
     $('.backdrop').attr('style', `height: calc(${$('.hero').innerHeight()}px + 15vh + 2.5rem + 8rem)`);
 });
-/**
- * * This is for Navbar Behaviour
- **/
-$(window).on('scroll', () => {
-    if (window.innerWidth > 426) {
-        if (window.pageYOffset >= 10) {
-            $('.navbar').addClass('navbar-contrast');
-            $('.menu-button').addClass('menu-button-contrast');
-        } else if (window.pageYOffset < 10) {
-            $('.navbar').removeClass('navbar-contrast');
-            $('.menu-button').removeClass('menu-button-contrast');
-        }
-    }
-    if (window.pageYOffset >= 10) {
-        $('.mobile-nav').addClass('mobile-nav-contrast');
-    } else if (window.pageYOffset < 10) {
-        $('.mobile-nav').removeClass('mobile-nav-contrast');
-    }
-});
 // Create dynamic href link
 if (localStorage.getItem('language') === 'en') {
     $('.hero-buttons > #form').attr('href', `${window.location.origin}/en/contact`);

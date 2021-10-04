@@ -48,6 +48,28 @@
         crossorigin="anonymous"></script>
     <!-- Global Scripts (Load after document fully loaded) -->
     <script defer src="/js/script.js"></script>
+    <!-- Navbar Script -->
+    <script defer>
+        /**
+         * * This is for Navbar Behaviour
+         **/
+        $(window).on('scroll', () => {
+            if (window.innerWidth > 426) {
+                if (window.pageYOffset >= 10) {
+                    $('.navbar').addClass('navbar-contrast');
+                    $('.menu-button').addClass('menu-button-contrast');
+                } else if (window.pageYOffset < 10) {
+                    $('.navbar').removeClass('navbar-contrast');
+                    $('.menu-button').removeClass('menu-button-contrast');
+                }
+            }
+            if (window.pageYOffset >= 10) {
+                $('.mobile-nav').addClass('mobile-nav-contrast');
+            } else if (window.pageYOffset < 10) {
+                $('.mobile-nav').removeClass('mobile-nav-contrast');
+            }
+        });
+    </script>
 </head>
 
 <body>

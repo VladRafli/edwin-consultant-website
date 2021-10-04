@@ -48,6 +48,28 @@
         crossorigin="anonymous"></script>
     <!-- Global Scripts (Load after document fully loaded) -->
     <script defer src="/js/script.js"></script>
+    <!-- Navbar Script -->
+    <script defer>
+        /**
+         * * This is for Navbar Behaviour
+         **/
+        $(window).on('scroll', () => {
+            if (window.innerWidth > 426) {
+                if (window.pageYOffset >= 10) {
+                    $('.navbar').addClass('navbar-contrast');
+                    $('.menu-button').addClass('menu-button-contrast');
+                } else if (window.pageYOffset < 10) {
+                    $('.navbar').removeClass('navbar-contrast');
+                    $('.menu-button').removeClass('menu-button-contrast');
+                }
+            }
+            if (window.pageYOffset >= 10) {
+                $('.mobile-nav').addClass('mobile-nav-contrast');
+            } else if (window.pageYOffset < 10) {
+                $('.mobile-nav').removeClass('mobile-nav-contrast');
+            }
+        });
+    </script>
 </head>
 
 <body>
@@ -129,18 +151,19 @@
         <!-- About -->
         <section class="about-section" id="about">
             <div class="about-history">
-                <div class="history-content"> 
+                <div class="history-content">
                     <span>TENTANG KAMI</span>
                     <h2>WHAT'S EDWIN CONSULTANTS?</h2>
                     <p>
-                        Kami telah berdiri sejak tahun 1990 dan terus bertumbuh dengan pesat. Kami melayani lebih dari 200 klien yang terdiri dari orang pribadi, UMKM, hingga bisnis 
+                        Kami telah berdiri sejak tahun 1990 dan terus bertumbuh dengan pesat. Kami melayani lebih dari
+                        200 klien yang terdiri dari orang pribadi, UMKM, hingga bisnis
                         dalam sektor manufaktur, perdagangan, dan jasa.
                     </p>
                 </div>
                 <div class="history-img">
                 </div>
             </div>
-            
+
             <div class="about-values">
                 <div class="value-title">
                     <span>NILAI KAMI</span>
@@ -211,8 +234,9 @@
                             <li>Jasa Kepatuhan Perpajakan Badan</li>
                             <li>Konsultasi Pajak dan Perencanaan Pajak</li>
                             <li>Peninjauan Kepatuhan Perpajakan</li>
-                            <li>Pendampingan Pemeriksaan Perpajakan</li> 
-                            <li>Pendampingan Sengketa Perpajakan (Gugatan Pajak, Keberatan Pajak, Banding Pajak, dan Peninjauan Kembali Pajak)</li>
+                            <li>Pendampingan Pemeriksaan Perpajakan</li>
+                            <li>Pendampingan Sengketa Perpajakan (Gugatan Pajak, Keberatan Pajak, Banding Pajak, dan
+                                Peninjauan Kembali Pajak)</li>
                             <li>Jasa Lainnya Sesuai Kebutuhan</li>
                         </ol>
                         <div class="service-btn">
@@ -232,7 +256,7 @@
                         <div class="service-btn">
                             <a href="#" id="form">SEE MORE DETAILS</a>
                         </div>
-                    </div> 
+                    </div>
                 </div>
             </div>
         </section>
@@ -243,9 +267,11 @@
                 <span>KARIR</span>
                 <h2>MENGAPA HARUS BERGABUNG DENGAN KAMI?</h2>
                 <p>
-                    Perusahaan kami berkomitmen untuk berkembang  ersama dengan Anda serta seluruh bagian dari tim kami. Kerja keras dan pengembangan diri sangat kami hargai. 
-                    Perkembangan terbaru dari regulasi akuntansi, perpajakan, keuangan dan bisnis akan selalu didiskusikan dan diaplikasikan. Kami mengundang para kandidat potensial 
-                    untuk bergabung dan berkembang  ersama dengan perusahaan kami.
+                    Perusahaan kami berkomitmen untuk berkembang ersama dengan Anda serta seluruh bagian dari tim kami.
+                    Kerja keras dan pengembangan diri sangat kami hargai.
+                    Perkembangan terbaru dari regulasi akuntansi, perpajakan, keuangan dan bisnis akan selalu
+                    didiskusikan dan diaplikasikan. Kami mengundang para kandidat potensial
+                    untuk bergabung dan berkembang ersama dengan perusahaan kami.
                 </p>
             </div>
             <div class="career-content">
@@ -258,11 +284,14 @@
                         <div class="career-req">
                             <h3>Persyaratan :</h3>
                             <ul>
-                                <li>Lulusan D3 atau Sarjana jurusan Akuntansi atau Perpajakan dari universitas terkemuka</li>
-                                <li>Mampu menguasai komputer dan menguasai Microsoft Office (Word, Excel, dll.), dan aplikasi perpajakan</li>
+                                <li>Lulusan D3 atau Sarjana jurusan Akuntansi atau Perpajakan dari universitas terkemuka
+                                </li>
+                                <li>Mampu menguasai komputer dan menguasai Microsoft Office (Word, Excel, dll.), dan
+                                    aplikasi perpajakan</li>
                                 <li>Memahami dasar akuntansi dan perpajakan</li>
                                 <li>Bersedia lembur dan ditugaskan ke luar kantor</li>
-                                <li>Jujur, berdedikasi tinggi, disiplin, bertanggung jawab, dan bisa bekerja sama dalam tim</li>
+                                <li>Jujur, berdedikasi tinggi, disiplin, bertanggung jawab, dan bisa bekerja sama dalam
+                                    tim</li>
                             </ul>
                         </div>
                         <div class="career-req">
@@ -277,7 +306,8 @@
                             </ol>
                         </div>
                     </div>
-                    <a href="mailto:hrd@edwinconsultant.com?subject=Applicant-Tax%20Accountant%20Associate"><button>APPLY NOW</button></a>
+                    <a href="mailto:hrd@edwinconsultant.com?subject=Applicant-Tax%20Accountant%20Associate"><button>APPLY
+                            NOW</button></a>
                 </div>
             </div>
         </section>
