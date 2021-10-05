@@ -32,20 +32,19 @@ if (pid === 'management') {
 // Disable reload on submit
 document.querySelector('form').addEventListener('submit', (e) => {
     e.preventDefault();
-    const formData = $('form').serializeArray();
     $.ajax({
         url: `${window.location.origin}/email`,
         method: 'POST',
         dataType: 'json',
         data: {
-            subject: formData[5].value,
+            subject: document.querySelector('#subject').value,
             content: {
-                name: formData[0].value,
-                phone: formData[1].value,
-                company: formData[2].value,
-                position: formData[3].value,
-                email: formData[4].value,
-                message: formData[6].value
+                name: document.querySelector('#name').value,
+                phone: document.querySelector('#phone').value,
+                company: document.querySelector('#company').value,
+                position: document.querySelector('#position').value,
+                email: document.querySelector('#email').value,
+                message: document.querySelector('#message').value
             }
         },
         beforeSend: (xhr, setting) => {
@@ -55,13 +54,11 @@ document.querySelector('form').addEventListener('submit', (e) => {
         success: (res, status, xhr) => {
             // Display modal of checklisted
             console.log('Successfully send the email...');
-            console.log(res);
             console.log(xhr.responseJSON);
         },
         error: (xhr, status, err) => {
             // Display modal of X
             console.log('Failed to send the email...');
-            console.log(err);
             console.log(xhr.responseJSON);
         }
     })
