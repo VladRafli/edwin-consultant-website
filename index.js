@@ -25,16 +25,17 @@ app.use(express.static(path.join(__dirname, '/public')));
  * And no caching because we want to redirect user to somewhere else
  */
 app.get('/', (req, res) => {
-    res.header('Cache-control', 'max-age=0, no-cache, no-store, must-revalidate');
+    res.header('Cache-Control', 'max-age=0, no-cache, no-store, must-revalidate');
     res.header('Expires', 'Thu, 01 Jan 1970 00:00:00 GMT');
     res.header('Pragma', 'no-cache');
-    res.sendFile(path.join(__dirname, '/src/redirect.html'));
+    res.header('Content-Type', 'text/html; charset=utf-8');
+    res.status(200).sendFile(path.join(__dirname, '/src/redirect.html'));
 });
 /**
  * Route for English Pages
  */
 app.get('/en', (req, res) => {
-    res.sendFile(path.join(__dirname, '/src/index.html'));
+    res.sendFile(path.join(__dirname, '/src/en/index.html'));
 });
 
 app.get('/en/contact', (req, res) => {
@@ -47,7 +48,7 @@ app.get('/en/contact', (req, res) => {
         `);
     } else {
         if (pid === undefined || pid === '') {
-            res.sendFile(path.join(__dirname, '/src/form.html'));
+            res.sendFile(path.join(__dirname, '/src/en/form-en.html'));
         } else {
             if ((pid.search('window') !== -1 || pid.search('alert') !== -1 || pid.search('document') !== -1) === true) {
                 res.status(403).send(`
@@ -56,7 +57,7 @@ app.get('/en/contact', (req, res) => {
                     <code>${pid}</code>
                 `);
             } else {
-                res.sendFile(path.join(__dirname, '/src/form.html'));
+                res.sendFile(path.join(__dirname, '/src/en/form-en.html'));
             }
         }
     }
@@ -66,10 +67,32 @@ app.get('/en/contact', (req, res) => {
  * Route for Indonesia Pages
  */
 app.get('/id', (req, res) => {
-    res.status(404).send(`
-        <h1>404 - Not Found</h1>
-        <p>Sorry, Indonesian page is still not generated for the moment</p>
-    `);
+    res.sendFile(path.join(__dirname, '/src/id/index.html'));
+});
+
+app.get('/id/contact', (req, res) => {
+    const pid = req.query.pid;
+    console.log(`PID = '${pid}'\nType = ${typeof pid}\n`);
+    if (typeof pid !== 'string' && typeof pid !== 'undefined') {
+        res.status(400).send(`
+            <h1>400 - Bad Request</h1>
+            <p>Something wrong in your request to the server</p>
+        `);
+    } else {
+        if (pid === undefined || pid === '') {
+            res.sendFile(path.join(__dirname, '/src/id/form-id.html'));
+        } else {
+            if ((pid.search('window') !== -1 || pid.search('alert') !== -1 || pid.search('document') !== -1) === true) {
+                res.status(403).send(`
+                    <h1>403 - Forbidden</h1>
+                    <p>You trying to do something illegal</p>
+                    <code>${pid}</code>
+                `);
+            } else {
+                res.sendFile(path.join(__dirname, '/src/id/form-id.html'));
+            }
+        }
+    }
 });
 
 /**
@@ -102,6 +125,7 @@ app.post('/email', (req, res) => {
     transporter.sendMail({
         from: `\"Edwin Consultant\" <${process.env.EMAIL_USERNAME}>`,
         to: process.env.EMAIL_DEST,
+        cc: `${process.env.EMAIL_CC}`,
         subject: req.body.subject,
         html: `
             <!DOCTYPE html>
