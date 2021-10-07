@@ -62,7 +62,7 @@ document.querySelector('form').addEventListener('submit', (e) => {
             // Display modal of checklisted
             console.log('Successfully send the email...');
             console.log(xhr.responseJSON);
-            $('#modal-target').innerHTML = `
+                $('#modal-target').html(`
                 <div class="modal-content">
                     <div class="flex-center">
                         <div class="modal-icon">
@@ -72,13 +72,13 @@ document.querySelector('form').addEventListener('submit', (e) => {
                     <span>Sent</span>
                     <a href="/">OK</a>
                 </div>
-            `;
+            `);
         },
         error: (xhr, status, err) => {
             // Display modal of X
             console.log('Failed to send the email...');
             console.log(xhr.responseJSON);
-            $('#modal-target').innerHTML = `
+            $('#modal-target').html(`
                 <div class="modal-content">
                     <div class="flex-center">
                         <div class="modal-icon">
@@ -88,7 +88,7 @@ document.querySelector('form').addEventListener('submit', (e) => {
                     <span>Error</span>
                     <a href="/">OK</a>
                 </div>
-            `;
+            `);
         }
     })
 });

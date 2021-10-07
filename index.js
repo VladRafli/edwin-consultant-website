@@ -113,62 +113,128 @@ app.post('/email', (req, res) => {
             pass: process.env.EMAIL_PASSWORD
         }
     });
-    transporter.verify((err, success) => {
-        if (err) {
-            console.log('Error on verifying SMTP connection:', err);
-            res.status(500).send({msg: `Error on verifying SMTP connection: ${err}`});
-            return;
-        } else {
-            console.log('Server is ready to take our messages');
+    let transporter_dev = nodemailer.createTransport({
+        host: process.env.EMAIL_SERVICE_HOST,
+        auth: {
+            user: process.env.EMAIL_USERNAME,
+            pass: process.env.EMAIL_PASSWORD
         }
     });
-    transporter.sendMail({
-        from: `\"Edwin Consultant\" <${process.env.EMAIL_USERNAME}>`,
-        to: process.env.EMAIL_DEST,
-        cc: `${process.env.EMAIL_CC}`,
-        subject: req.body.subject,
-        html: `
-            <!DOCTYPE html>
-            <html>
-                <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <style>
-                        .warning-msg {
-                            padding: 1rem;
-                            border: 2px solid red;
-                            background-color: rgba(255, 165, 0, .5);
-                            font-size: 1.1rem;
-                            font-weight: bold;
-                        }
-                    </style>
-                </head>
-                <body>
-                    <div class="warning-msg">
-                        <p>Perhatian! Jika terdapat sebuah link tercantum pada body email ini, mohon untuk tidak mengklik-nya sebagai tindakan keamanan!</p>
-                    </div>
-                    <h1>${req.body.subject}</h1>
-                    <div class="content">
-                        <h2>Detail:</h2>
-                        <p>Nama: ${req.body.content.name}</p>
-                        <p>Nomor Telepon: ${req.body.content.phone}</p>
-                        <p>Perusahaan: ${req.body.content.company}</p>
-                        <p>Jabatan: ${req.body.content.position}</p>
-                        <p>Email: ${req.body.content.email}</p>
-                        <p>Pesan: ${req.body.content.message}</p>
-                    </div>
-                </body>
-            </html>
-        `
-    }, (err, data) => {
-        if (err) {
-            console.log('Error on sending email:', err);
-            res.status(500).send({ msg: 'Error on sending email', reason: err });
-        } else {
-            console.log('Email sent successfully');
-            res.status(200).send({ msg: 'Email send successfully' });
-        }
-    });
+    if (process.env.NODE_ENV === 'development') {
+        transporter_dev.verify((err, success) => {
+            if (err) {
+                console.log('Error on verifying SMTP connection:', err);
+                res.status(500).send({ msg: `Error on verifying SMTP connection: ${err}` });
+                return;
+            } else {
+                console.log('Server is ready to take our messages');
+            }
+        });
+        transporter_dev.sendMail({
+            from: `\"Edwin Consultant\" <${process.env.EMAIL_USERNAME}>`,
+            to: process.env.EMAIL_DEST,
+            cc: `${process.env.EMAIL_CC}`,
+            subject: req.body.subject,
+            html: `
+                <!DOCTYPE html>
+                <html>
+                    <head>
+                        <meta charset="UTF-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <style>
+                            .warning-msg {
+                                padding: 1rem;
+                                border: 2px solid red;
+                                background-color: rgba(255, 165, 0, .5);
+                                font-size: 1.1rem;
+                                font-weight: bold;
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        <div class="warning-msg">
+                            <p>Perhatian! Jika terdapat sebuah link tercantum pada body email ini, mohon untuk tidak mengklik-nya sebagai tindakan keamanan!</p>
+                        </div>
+                        <h1>${req.body.subject}</h1>
+                        <div class="content">
+                            <h2>Detail:</h2>
+                            <p>Nama: ${req.body.content.name}</p>
+                            <p>Nomor Telepon: ${req.body.content.phone}</p>
+                            <p>Perusahaan: ${req.body.content.company}</p>
+                            <p>Jabatan: ${req.body.content.position}</p>
+                            <p>Email: ${req.body.content.email}</p>
+                            <p>Pesan: ${req.body.content.message}</p>
+                        </div>
+                    </body>
+                </html>
+            `
+        }, (err, data) => {
+            if (err) {
+                console.log('Error on sending email:', err);
+                res.status(500).send({ msg: 'Error on sending email', reason: err });
+            } else {
+                console.log('Email sent successfully');
+                res.status(200).send({ msg: 'Email send successfully' });
+            }
+        });
+    } else if (process.env.NODE_ENV === 'production') {
+        transporter.verify((err, success) => {
+            if (err) {
+                console.log('Error on verifying SMTP connection:', err);
+                res.status(500).send({ msg: `Error on verifying SMTP connection: ${err}` });
+                return;
+            } else {
+                console.log('Server is ready to take our messages');
+            }
+        });
+        transporter.sendMail({
+            from: `\"Edwin Consultant\" <${process.env.EMAIL_USERNAME}>`,
+            to: process.env.EMAIL_DEST,
+            cc: `${process.env.EMAIL_CC}`,
+            subject: req.body.subject,
+            html: `
+                <!DOCTYPE html>
+                <html>
+                    <head>
+                        <meta charset="UTF-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <style>
+                            .warning-msg {
+                                padding: 1rem;
+                                border: 2px solid red;
+                                background-color: rgba(255, 165, 0, .5);
+                                font-size: 1.1rem;
+                                font-weight: bold;
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        <div class="warning-msg">
+                            <p>Perhatian! Jika terdapat sebuah link tercantum pada body email ini, mohon untuk tidak mengklik-nya sebagai tindakan keamanan!</p>
+                        </div>
+                        <h1>${req.body.subject}</h1>
+                        <div class="content">
+                            <h2>Detail:</h2>
+                            <p>Nama: ${req.body.content.name}</p>
+                            <p>Nomor Telepon: ${req.body.content.phone}</p>
+                            <p>Perusahaan: ${req.body.content.company}</p>
+                            <p>Jabatan: ${req.body.content.position}</p>
+                            <p>Email: ${req.body.content.email}</p>
+                            <p>Pesan: ${req.body.content.message}</p>
+                        </div>
+                    </body>
+                </html>
+            `
+        }, (err, data) => {
+            if (err) {
+                console.log('Error on sending email:', err);
+                res.status(500).send({ msg: 'Error on sending email', reason: err });
+            } else {
+                console.log('Email sent successfully');
+                res.status(200).send({ msg: 'Email send successfully' });
+            }
+        });
+    }
 });
 
 app.listen(PORT, console.log(`Server is running on http://localhost:${PORT} or 127.0.0.1:${PORT}`));
