@@ -1,3 +1,7 @@
+.mobile-nav {
+    display: none;
+}
+
 .menu-button {
     display: none;
 }
@@ -96,6 +100,7 @@
     .mobile-nav {
         height: calc(10vh + 1em);
         width: 100%;
+        display: block;
         position: fixed;
         top: 0;
         left: 0;
