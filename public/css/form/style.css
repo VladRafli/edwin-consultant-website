@@ -42,10 +42,6 @@
 
 /* Main Style -- Rafli */
 
-.menu-button {
-    color: black;
-}
-
 main {
     padding: calc(15vh + 2.5rem) 8rem 3rem 8rem;
     display: grid;

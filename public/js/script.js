@@ -53,6 +53,7 @@ $(window).on('resize', () => {
 });
 // Create dynamic href link
 if (localStorage.getItem('language') === 'en') {
+    $('.logo-mobile > a').attr('href', `${window.location.origin}/en`);
     $('.hero-buttons > #form').attr('href', `${window.location.origin}/en/contact`);
     $('.logo > a').attr('href', `${window.location.origin}/en`);
     $('#contact-footer').attr('href', `${window.location.origin}/en/contact`);
@@ -60,6 +61,7 @@ if (localStorage.getItem('language') === 'en') {
     $('#taxation-form > a').attr('href', `${window.location.origin}/en/contact?pid=taxation`);
     $('#accounting-form > a').attr('href', `${window.location.origin}/en/contact?pid=accounting`);
 } else if (localStorage.getItem('language') === 'id') {
+    $('.logo-mobile > a').attr('href', `${window.location.origin}/id`);
     $('.hero-buttons > #form').attr('href', `${window.location.origin}/id/contact`);
     $('.logo > a').attr('href', `${window.location.origin}/id`);
     $('#contact-footer').attr('href', `${window.location.origin}/id/contact`);

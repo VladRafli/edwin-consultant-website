@@ -2,7 +2,7 @@
     display: none;
 }
 
-.logo-mobile {
+.logo-mobile > a {
     display: none;
 }
 
@@ -97,6 +97,8 @@
         height: calc(10vh + 1em);
         width: 100%;
         position: fixed;
+        top: 0;
+        left: 0;
         z-index: 1;
     }
 
@@ -118,7 +120,7 @@
         cursor: pointer;
     }
 
-    .logo-mobile {
+    .logo-mobile > a {
         height: fit-content;
         width: fit-content;
         margin-right: 1em;
@@ -130,7 +132,7 @@
         right: 0;
     }
 
-    .logo-mobile > img {
+    .logo-mobile > a > img {
         height: 2.5rem;
     }
 
